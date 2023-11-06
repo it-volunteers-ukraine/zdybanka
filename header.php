@@ -10,7 +10,7 @@
 <body>  
     <div class="wrapper">
         <header class="header">
-            <div class="header__content _container">
+            <div class="header__content container">            
                 <div class="header__menu menu">
                     <div class="menu__icon icon-menu menu__round">
                         <span></span>
@@ -24,7 +24,10 @@
                             echo get_custom_logo();
                         }
                     ?>                     
-                    <div class="menu__content">IT VOLUNTEERS</div>
+                    <div class="menu__content">
+                        IT VOLUNTEERS
+                        <p>Ми - група ентузіастів, які об’єднались заради допомоги некомерційним громадським організаціям. Надаємо свої послуги зі створення веб-сайтів та технічної підтримки абсолютно безкоштовно.  </p>
+                    </div>
                     <nav class="menu__body"> 
                         <div class=" menu__container">
                             <?php wp_nav_menu( [
