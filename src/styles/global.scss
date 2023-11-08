@@ -16,16 +16,20 @@ body {
 }
 
 .container { 
-    max-width: 1180px;
-    margin: 0 auto;     
-    @media (max-width: 1280px) {        
+    min-width: 300px;
+    padding: 0 16px;   
+    margin: 0 auto;   
+    @media (min-width: 480px) {        
+        max-width: 736px;                       
+    }
+    @media (min-width: 767.98px) {        
+        max-width: 688px;  
+        padding: 0;              
+    }
+    @media (min-width: 991.98px) {        
         max-width: 950px;                
     }
-    @media (max-width: 991.98px) {        
-        max-width: 688px;                
-    }
-    @media (max-width: 767.98px) {        
-        max-width: none;
-        padding: 0 16px;       
+    @media (min-width: 1280px) {        
+        max-width: 1180px;                        
     }         
 }
