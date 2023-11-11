@@ -9,11 +9,15 @@ get_header();
         <div class="events">
             <div class="title-wraprer title">
                 <h2 class="events-title">ДО КАЛЕНДАРЮ ПОДІЙ</h1>
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/calendar-icon.svg" class='calendar-icon' alt="calendar icon" width="54px" height="54px" />
+                    <a href="#" class='calendar-link'>
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/calendar-icon.svg" class='calendar-icon' alt="calendar icon" width="54px" height="54px" />
+                    </a>
             </div>
             <div class="event-wrapper">
                 <div class="event-service">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/sort.svg" class='event-sort-icon' alt="sort icon" />
+                    <button type='button' class='sort-button'>
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/sort.svg" class='event-sort-icon' alt="sort icon" />
+                    </button>
                 </div>
                 <!-- <div class='event-card'> -->
                 <ul class="event-list">

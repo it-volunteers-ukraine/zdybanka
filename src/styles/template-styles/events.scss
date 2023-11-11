@@ -11,14 +11,17 @@
   }
 }
 
-.calendar-icon {
-  width: 54px;
-  height: 54px;
+.calendar-link {
   margin: 0 9px;
 
   @media screen and (min-width: 768px) {
     margin: 0 0 0 24px;
   }
+}
+
+.calendar-icon {
+  width: 54px;
+  height: 54px;
 }
 .events-title {
   font-size: 28px;
@@ -44,6 +47,12 @@
   @media screen and (min-width: 992px) {
     margin-bottom: 16px;
   }
+}
+
+.sort-button{
+    padding: 0;
+    background-color: transparent;
+    border: none;
 }
 
 .event-sort-icon {
