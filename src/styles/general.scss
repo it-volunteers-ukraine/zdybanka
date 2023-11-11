@@ -21,7 +21,7 @@ p {
   padding: 0;
 }
 
-ul {
+ul, ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -29,9 +29,9 @@ ul {
 
 li {
   margin: 0;
-  padding: 0;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
