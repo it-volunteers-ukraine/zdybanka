@@ -13,7 +13,7 @@
 
 .calendar-link {
   margin: 0 9px;
-
+  min-width: 54px;
   @media screen and (min-width: 768px) {
     margin: 0 0 0 24px;
   }
@@ -49,10 +49,10 @@
   }
 }
 
-.sort-button{
-    padding: 0;
-    background-color: transparent;
-    border: none;
+.sort-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }
 
 .event-sort-icon {

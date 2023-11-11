@@ -10,7 +10,7 @@ get_header();
             <div class="title-wraprer title">
                 <h2 class="events-title">ДО КАЛЕНДАРЮ ПОДІЙ</h1>
                     <a href="#" class='calendar-link'>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/calendar-icon.svg" class='calendar-icon' alt="calendar icon" width="54px" height="54px" />
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/calendar-icon.svg" class='calendar-icon' alt="calendar icon"  />
                     </a>
             </div>
             <div class="event-wrapper">
