@@ -26,41 +26,45 @@ get_header();
                     <img src="<?php bloginfo('template_url'); ?>/assets/images/icon_round-plus.svg" alt="plus" width="20" height="20">
                 </button>
             </div>
-            <div class="gallery">
-                <div class="gallery-wrapper">
-                    <div class="gallery-sm left-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo" >
-                    </div>
-                    <div class="gallery-sm left">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo" >
-                    </div>
-                    <div class="gallery-lg center">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo" >
-                    </div>
-                    <div class="gallery-sm right">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo" >
-                    </div>
-                    <div class="gallery-sm right-1">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo" >
-                    </div>
-                </div>
-                <div class="gallery-paginate">
-                    <div class="gallery-nav">
-                        <button type='button' class="nav-btn">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/images/previous-btn.svg" class='gallery-arrow' alt="arrow left">
-                        </button>
-                        <button type='button' class="nav-btn">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/images/nav-dots.svg" class='gallery-navdots' alt="nav dots">
-                        </button>
-                        <button class="nav-btn" type='button'>
-                            <img src="<?php bloginfo('template_url'); ?>/assets/images/next-btn.svg" class='gallery-arrow' alt="arrow right">
-                        </button>
 
-                    </div>
-                </div>
+        </div>
+    </div>
+
+    <div class="container-gallery">
+        <div class="gallery-wrapper">
+            <div class="gallery-sm left-1">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo">
+            </div>
+            <div class="gallery-sm left">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo">
+            </div>
+            <div class="gallery-lg center">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo">
+            </div>
+            <div class="gallery-sm right">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo">
+            </div>
+            <div class="gallery-sm right-1">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo">
+            </div>
+        </div>
+
+        <div class="gallery-paginate">
+            <div class="gallery-nav">
+                <button type='button' class="nav-btn">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/previous-btn.svg" class='gallery-arrow' alt="arrow left">
+                </button>
+                <button type='button' class="nav-btn">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/nav-dots.svg" class='gallery-navdots' alt="nav dots">
+                </button>
+                <button class="nav-btn" type='button'>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/next-btn.svg" class='gallery-arrow' alt="arrow right">
+                </button>
+
             </div>
         </div>
     </div>
+
 </section>
 
 
