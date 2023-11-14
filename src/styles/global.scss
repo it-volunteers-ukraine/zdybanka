@@ -52,8 +52,7 @@ body {
     }
 
     @media screen and (min-width: 992px){
-        width: 992px;
-        padding: 0 152px;
+        width: 752px;
     }
 
     @media screen and (min-width: 1200px){
@@ -77,4 +76,29 @@ body {
     // @media (min-width: 1280px) {        
     //     max-width: 1180px;                        
     // }         
+}
+
+.container-benefits{
+    @extend .container;
+
+    @media screen and (min-width: 992px){
+        max-width: 880px;
+        padding: 0 24px;
+    }
+
+    @media screen and (min-width: 1200px){
+        max-width: 1720px;
+    }
+}
+
+.container-gallery{
+    @extend .container;
+
+    @media screen and (min-width: 992px){
+        max-width: 872px;
+    }
+
+    @media screen and (min-width: 1200px){
+        max-width: 1618px;
+    }
 }
