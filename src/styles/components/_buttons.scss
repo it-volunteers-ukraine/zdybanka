@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.btn-reset {
+#btn-reset {
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -53,4 +53,8 @@
     &:active {
         background-color: $btn-inv-pressed;
     }
+  }
+
+  .btn-clear{
+    @extend #btn-reset;
   }
