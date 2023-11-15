@@ -1,1 +1,1 @@
-console.log("footer part"),console.log("header"),console.log("main");
+console.log("footer part");let line=document.querySelector(".icon-menu"),links=document.querySelectorAll(".menu__link"),menu=document.querySelector(".menu__body");function toogleMenu(){line.classList.toggle("active"),menu.classList.toggle("active"),document.body.classList.toggle("lock")}line.addEventListener("click",toogleMenu),console.log("main");

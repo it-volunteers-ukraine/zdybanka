@@ -7,6 +7,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .wrapper {
     width: 100%;
     min-height: 100%;
@@ -18,18 +22,87 @@ body {
 .container { 
     min-width: 300px;
     padding: 0 16px;   
-    margin: 0 auto;   
-    @media (min-width: 480px) {        
-        max-width: 736px;                       
-    }
+    margin: 0 auto; 
     @media (min-width: 767.98px) {        
         max-width: 688px;  
         padding: 0;              
     }
     @media (min-width: 991.98px) {        
-        max-width: 950px;                
+        max-width: 688px;                
     }
     @media (min-width: 1280px) {        
         max-width: 1180px;                        
     }         
 }
+
+
+/*icon-font=================*/
+@font-face {
+    font-family: 'icon';    
+    src:  url('../../assets/images/icon.eot?nnwb2x');
+    src:  url('../../assets/images/icon.eot?nnwb2x#iefix') format('embedded-opentype'),
+      url('../../assets/images/icon.ttf?nnwb2x') format('truetype'),
+      url('../../assets/images/icon.woff?nnwb2x') format('woff'),
+      url('../../assets/images/icon.svg?nnwb2x#icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"]::before, [class*=" icon-"]::before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-add-to-calendar:before {
+    content: "\e900";
+  }
+  .icon-calendar:before {
+    content: "\e901";
+  }
+  .icon-contacts:before {
+    content: "\e902";
+  }
+  .icon-facebook:before {
+    content: "\e903";
+  }
+  .icon-instagram:before {
+    content: "\e904";
+  }
+  .icon-mail:before {
+    content: "\e905";
+  }
+  .icon-more-btn:before {
+    content: "\e906";
+  }
+  .icon-nav:before {
+    content: "\e907";
+  }
+  .icon-next-btn:before {
+    content: "\e908";
+  }
+  .icon-phone:before {
+    content: "\e909";
+  }
+  .icon-previous-btn:before {
+    content: "\e90a";
+  }
+  .icon-show-more:before {
+    content: "\e90b";
+  }
+  .icon-sort:before {
+    content: "\e90c";
+  }
+  .icon-telegram:before {
+    content: "\e90d";
+  }
