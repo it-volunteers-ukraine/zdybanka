@@ -21,16 +21,23 @@
   }
 }
 
+#svg-animation {
+  transition: background-color $animations;
+
+  & .icon{
+    transition: fill $animations;
+  }
+}
+
 #btn-svg {
   @extend #btn-reset;
+  @extend #svg-animation;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color $animations;
 
   & .icon {
     fill: inherit;
-    transition: fill $animations;
   }
 }
 
@@ -133,6 +140,8 @@
 
 .btn-icon {
   @extend #svg-yellow;
+  @extend #svg-animation;
+
 }
 
 .btn-socseti-yellow {
