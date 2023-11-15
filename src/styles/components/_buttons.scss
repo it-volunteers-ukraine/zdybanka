@@ -1,0 +1,60 @@
+@import '../variables.scss';
+
+#btn-reset {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+  
+    &:hover,
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+  
+  .btn-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 241px;
+    height: 56px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: $yellow;
+    border: none;
+    cursor: pointer;
+    transition: background-color $animations;
+  
+    & img {
+      margin-left: 8px;
+    }
+
+    &:hover, &:focus{
+        background-color: $btn-hover;
+    }
+    &:active {
+        background-color: $btn-pressed;
+    }
+  }
+  
+  .btn-inverse {
+    @extend .btn-main;
+    color: #0d0d0d;
+    background-color: white;
+    border: 1px solid #f2b800;
+
+    &:hover, &:focus {
+        background-color: $btn-inv-hover;
+    }
+    &:active {
+        background-color: $btn-inv-pressed;
+    }
+  }
+
+  .btn-clear{
+    @extend #btn-reset;
+  }
