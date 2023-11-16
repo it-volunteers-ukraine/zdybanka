@@ -1,0 +1,24 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4.1.1
+
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          gulp build
+
+      - run: set -eu
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "${{ secrets.zdybanka }}" > "$HOME/.ssh/key"
+      - run: chmod 600 "$HOME/.ssh/key"
+      #Deploy
+      - run: rsync -e "ssh -p 65002 -i $HOME/.ssh/key -o StrictHostKeyChecking=no"  --archive --compress --delete  --exclude '.github' --exclude '.git' . user@domains:/home/u298000242/domains/zdybanka.ddns.net.ua/public_html/wp-content/themes/zdybanka
