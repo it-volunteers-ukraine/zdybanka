@@ -45,7 +45,7 @@
 <symbol id="icon-button-open-more" viewBox="0 0 34 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M26.862 18.489l-9.6 8.711M17.262 27.2l-9.6-8.711M17.262 27.2v-22.4"></path>
 </symbol>
-<symbol id="icon-button-next-icon" viewBox="0 0 34 32">
+<symbol id="icon-button-next" viewBox="0 0 34 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M19.751 6.4l8.711 9.6M28.462 16l-8.711 9.6M28.462 16h-22.4"></path>
 </symbol>
 </defs>
