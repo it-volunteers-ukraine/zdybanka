@@ -20,12 +20,17 @@ get_header();
             </div>
             <div class="event-btn-wrapper">
                 <button id='btn-more' type='button' class="event-btn-inverse">Показати більше
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/icon-arrow-down.svg" alt="arrow down" width="20" height="20">
+                    <svg class="icon" alt="more" width="20" height="20">
+                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-button-open-more" alt="next"></use>
+                    </svg>
                 </button>
                 <button type='button' class="event-btn-main">Додати в календар
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/icon_round-plus.svg" alt="plus" width="20" height="20">
+                    <svg class="icon" alt="plus" width="20" height="20">
+                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-button-next" alt="next"></use>
+                    </svg>
                 </button>
             </div>
+
 
         </div>
     </div>
@@ -51,16 +56,21 @@ get_header();
 
         <div class="gallery-paginate">
             <div class="gallery-nav">
-                <button type='button' class="nav-btn">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/previous-btn.svg" class='gallery-arrow' alt="arrow left">
+                <button typpe="button" class='nav-btn'>
+                    <svg class="gallery-arrow">
+                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-previous-btn" alt="arrow left"></use>
+                    </svg>
                 </button>
-                <button type='button' class="nav-btn">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/nav-dots.svg" class='gallery-navdots' alt="nav dots">
+                <button typpe="button" class='nav-btn'>
+                    <svg class="gallery-navdots">
+                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-nav-dots" alt="nav dots"></use>
+                    </svg>
                 </button>
-                <button class="nav-btn" type='button'>
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/next-btn.svg" class='gallery-arrow' alt="arrow right">
+                <button typpe="button" class='nav-btn'>
+                    <svg class="gallery-arrow">
+                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-next-btn" alt="arrow right"></use>
+                    </svg>
                 </button>
-
             </div>
         </div>
     </div>

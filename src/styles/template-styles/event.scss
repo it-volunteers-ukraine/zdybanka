@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .btn-reset {
   border: none;
   background-color: transparent;
@@ -100,9 +102,20 @@
 
 .event-btn-main {
   @extend .btn-main;
+
+  & .icon{
+    stroke: white;
+    margin-left: 8px;
+  }
 }
 
 .event-btn-inverse {
+  
+  & .icon{
+    stroke: black;
+    margin-left: 8px;
+  }
+
   @extend .btn-inverse;
   margin-bottom: 16px;
 
@@ -212,6 +225,7 @@
 .gallery-arrow {
   width: 86px;
   height: 28px;
+  fill: $yellow;
 
   @media screen and (min-width: 768px) {
     width: 180px;
@@ -222,6 +236,8 @@
 .gallery-navdots {
   width: 62px;
   height: 80px;
+  fill: $yellow;
+
 
   @media screen and (min-width: 768px) {
   }
