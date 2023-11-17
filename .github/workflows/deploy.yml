@@ -21,4 +21,4 @@ jobs:
       - run: echo "${{ secrets.it-volunteers }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       #Deploy
-      - run: rsync -e "ssh -p 65002 -i $HOME/.ssh/key -o StrictHostKeyChecking=no"  --archive --compress --delete  --exclude '.github' --exclude '.git' . user@domains:/home/u298000242/domains/zdybanka.ddns.net.ua/public_html/wp-content/themes/zdybanka
+      #- run: rsync -e "ssh -p 65002 -i $HOME/.ssh/key -o StrictHostKeyChecking=no"  --archive --compress --delete  --exclude '.github' --exclude '.git' . user@domains:/home/u298000242/domains/zdybanka.ddns.net.ua/public_html/wp-content/themes/zdybanka
