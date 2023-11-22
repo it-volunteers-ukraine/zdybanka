@@ -1,17 +1,23 @@
-.container__header { 
-  min-width: 300px;
-  padding: 0 16px;   
-  margin: 0 auto; 
-  @media (min-width: 767.98px) {        
-      max-width: 704px;  
-      padding: 0;              
+@import "../styles/global";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container-header {
+  @extend .container;
+
+  @media screen and (min-width: 992px) {
+    width: 976px;
+    padding-left: 24px;
+    padding-right: 24px;        
   }
-  @media (min-width: 991.98px) {        
-      max-width: 928px;                  
+  
+  @media screen and (min-width: 1200px) {    
+    width: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;    
   }
-  @media (min-width: 1280px) {        
-      max-width: 1180px;                        
-  }         
 }
 
 .header {    
@@ -21,8 +27,8 @@
     position: relative;
     @media (min-width: 767.98px) {      
       border-bottom: 3px solid $yellow;
-    }           
-  }
+    }              
+  }  
   &__container {
     display: flex;
     justify-content: space-between;
@@ -30,11 +36,14 @@
     margin: 7px 0;    
     @media (min-width: 767.98px) {
       margin: 230px 0 0px;
-    }    
+    }   
+    @media (min-width: 1199.98px) {
+      justify-content: center;
+    } 
     @media (min-width: 1280px) {        
-      margin: 300px 0 0px;                        
+      margin: 300px 0 0px;                             
     }
-    &-logo {
+    &-logo {      
       img {
         width: 80px;
         height: 90px;
@@ -82,11 +91,16 @@
         top: 97px;
         right: -18px;
       }       
+      @media (min-width: 1200px) {
+        width: 1792px;
+        top: 100px;
+        right: -300px;
+      }  
       @media (min-width: 1280px) {
         width: 1792px;
         top: 115px;
         right: -300px;
-      }    
+      } 
     }
   }
   &__list {
@@ -134,9 +148,8 @@
     }
     a { 
       vertical-align: middle;    
-      border-radius: 50px;
-      background: $yellow;
-      color: #FFFFFF;
+      border-radius: 50%;
+      background: $yellow;      
       @media (min-width: 480px) {
         margin-right: 67px;
         &:last-of-type {margin-right: 0px;}
@@ -146,10 +159,30 @@
         transform: scale(1.3);            
       }
     }
-    &-facebook {padding: 7.5px 12px;}
-    &-telegram {padding: 7.5px 7px;}
-    &-instagram {padding: 7.5px 8px;}
-    &-calendar {padding: 7.5px 8px;}
+    &-facebook {
+      width: 32px;
+      height: 28px;     
+      padding: 7.5px 12px;
+      fill: #FFFFFF;
+    }
+    &-telegram {
+      padding: 7.5px 7px;
+      width: 32px;
+      height: 28px;
+      fill: #FFFFFF;
+    }
+    &-instagram {
+      padding: 7.5px 7px;
+      width: 32px;
+      height: 28px;
+      fill: #FFFFFF;
+    }
+    &-calendar {
+      padding: 7.5px 8px;
+      width: 32px;
+      height: 28px;
+      fill: #FFFFFF;
+    }
   }
   &__about {
     background-color: $black;
@@ -169,7 +202,7 @@
         gap: 20px;
         padding-top: 10px;
         padding-bottom: 10px;        
-      } 
+      }       
       img {
         width: 280px;
         height: 280px;

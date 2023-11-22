@@ -10,7 +10,7 @@
 <body>  
     <div class="wrapper">
         <header class="header">
-            <div class="container__header">  
+            <div class="container-header">  
                 <div class="header__menu">
                    <div class="icon-menu"><span></span><span></span><span></span></div>
                     <div class="header__container"> 
@@ -41,10 +41,26 @@
                                 ?>                               
                             </div> 
                             <div class="header__social">
-                                <a href="<?php the_field('facebok_link', 'option'); ?>" target="_blank" class="header__social-facebook icon-facebook"></a>
-                                <a href="<?php the_field('telegram_link', 'option'); ?>" target="_blank" class="header__social-telegram icon-telegram"></a>
-                                <a href="<?php the_field('instagram_link', 'option'); ?>" target="_blank" class="header__social-instagram icon-instagram"></a>
-                                <a href="<?php the_field('calendar_link', 'option'); ?>" target="_blank" class="header__social-calendar icon-calendar"></a>
+                                <a href="<?php the_field('facebok_link', 'option'); ?>" target="_blank">
+                                    <svg class="header__social-facebook">
+                                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-facebook" alt="facebook"></use>
+                                    </svg>
+                                </a>   
+                                <a href="<?php the_field('telegram_link', 'option'); ?>" target="_blank">
+                                    <svg class="header__social-telegram">
+                                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-telegram" alt="telegram"></use>
+                                    </svg>
+                                </a> 
+                                <a href="<?php the_field('instagram_link', 'option'); ?>" target="_blank">
+                                    <svg class="header__social-instagram">
+                                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-instagram" alt="instagram"></use>
+                                    </svg>
+                                </a>  
+                                <a href="<?php the_field('calendar_link', 'option'); ?>" target="_blank">
+                                    <svg class="header__social-calendar">
+                                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-calendar" alt="calendar"></use>
+                                    </svg>
+                                </a>   
                             </div>
                             <span></span>                                                                           
                         </nav>                         
@@ -52,7 +68,7 @@
                 </div>
             </div>   
             <div class="header__about">
-                <div class="container__header">
+                <div class="container-header">
                     <div class="header__about-container">
                         <?php 
                         if ( has_custom_logo() ) {
