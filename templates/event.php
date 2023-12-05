@@ -36,7 +36,7 @@ get_header();
     </div>
 
     <div class="container-gallery">
-        <div class="gallery-wrapper">
+        <div class="gallery-wraper">
             <div class="gallery-sm left-1">
                 <img src="<?php bloginfo('template_url'); ?>/assets/images/event.jpg" class='gallery-img' alt="photo">
             </div>
