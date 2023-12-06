@@ -14,9 +14,7 @@ const debounce = (callback, time) => {
 
 const slideParamsSmall = {
   loop: true,
-  // height: 240,
-  // autoHeight: false,
-
+  
   // keyboard:{
   //   enabled: true,
   //   onlyInViewport: true,
@@ -39,32 +37,40 @@ const slideParamsSmall = {
   },
 };
 
-const swiper1 = new Swiper(".slider1", {
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  // scrollbar:{
-  //   el: '.swiper-scrollbar',
-  //   draggable: true,
-  // },
-  keyboard: {
-    enabled: false,
-    onlyInViewport: true,
-    pageUpDown: true,
-  },
-  slidesPerView: 1,
-  initialSlide: initialSlideForSlider1,
-  spaceBetween: 20,
-  allowTouchMove: false,
-  // height: 300,
-  // autoHeight: false,
 
-  // And if we need scrollbar
-  // scrollbar: {
-  //  el: '.swiper-scrollbar',
-  // },
+
+// const swiper1_ = new Swiper(".slider1", {
+//   loop: true,
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   // scrollbar:{
+//   //   el: '.swiper-scrollbar',
+//   //   draggable: true,
+//   // },
+//   keyboard: {
+//     enabled: false,
+//     onlyInViewport: true,
+//     pageUpDown: true,
+//   },
+//   slidesPerView: 1,
+//   initialSlide: initialSlideForSlider1,
+//   spaceBetween: 20,
+//   allowTouchMove: false,
+//   // height: 300,
+//   // autoHeight: false,
+
+//   // And if we need scrollbar
+//   // scrollbar: {
+//   //  el: '.swiper-scrollbar',
+//   // },
+// });
+
+const swiper1 = new Swiper(".slider1", {
+  ...slideParamsSmall,
+  initialSlide: initialSlideForSlider1,
+  slidesPerView: 1,
 });
 
 const swiper0 = new Swiper(".slider0", {
@@ -80,7 +86,7 @@ const swiper2 = new Swiper(".slider2", {
 const adaptiveSlider = (e) => {
   const widtWin = window.innerWidth;
   if (widtWin > 1199) {
-    // console.log(swiper1);
+    console.log(swiper2);
     if (swiper0.params.slidesPerView == 2) {
       return;
     } else {
