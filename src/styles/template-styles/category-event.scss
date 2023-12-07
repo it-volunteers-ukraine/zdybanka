@@ -1,4 +1,5 @@
-@import '../variables.scss';
+@import "../variables.scss";
+@import "../components/gallery.scss";
 
 .btn-reset {
   border: none;
@@ -50,8 +51,9 @@
     font-size: 24px;
     margin-bottom: 16px;
   }
-
-  
+  @media screen and (min-width: 1200px) {
+    font-size: 32px;
+  }
 }
 
 .event-date {
@@ -65,7 +67,7 @@
     margin-bottom: 24px;
   }
   @media screen and (min-width: 1200px) {
-    font-size: 33px;
+    font-size: 20px;
   }
 }
 
@@ -98,20 +100,17 @@
   margin-bottom: 1em;
 }
 
-
-
 .event-btn-main {
   @extend .btn-main;
 
-  & .icon{
+  & .icon {
     stroke: white;
     margin-left: 8px;
   }
 }
 
 .event-btn-inverse {
-  
-  & .icon{
+  & .icon {
     stroke: black;
     margin-left: 8px;
   }
@@ -130,115 +129,15 @@
   align-items: center;
   margin-bottom: 16px;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     align-items: flex-start;
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-bottom: 64px;
   }
-  @media screen and (min-width: 1200px){
+  @media screen and (min-width: 1200px) {
     margin-bottom: 80px;
   }
-
 }
 
-.gallery-wrapper {
-  margin-bottom: 9px;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: flex-end;
-    margin-top: 40px;
-    gap: 20px;
-    margin-bottom: 48px;
-  }
-  @media screen and (min-width: 992px){
-    margin-bottom: 64px;
-  }
-}
-
-.gallery-sm {
-  display: none;
-  outline: 1px solid tomato;
-
-
-
-  @media screen and (min-width: 768px) {
-    display: block;
-    max-width: 160px;
-    height: 200px;
-  }
-  @media screen and (max-width: 1199.98px){
-    &.left-1, &.right-1{
-      display: none;
-    }
-  }
-  @media screen and (min-width: 1200px) {
-    max-width: 180px;
-    height: 240px;
-
-  }
-}
-
-.gallery-lg {
-  height: 400px;
-  outline: 1px solid tomato;
-
-  @media screen and (min-width: 768px) {
-    width: 343px;
-    height: 318px;
-  }
-  @media screen and (min-width: 992px) {
-    width: 448px;
-    height: 360px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 778px;
-    height: 560px;
-  }
-}
-
-.gallery-img{
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.gallery-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  @media screen and (min-width: 768px) {
-    justify-content: space-between;
-  }
-
-  @media screen and (min-width: 1200px){
-    padding: 0 10px;
-  }
-}
-
-.nav-btn {
-  @extend .btn-reset;
-}
-
-.gallery-arrow {
-  width: 86px;
-  height: 28px;
-  fill: $yellow;
-
-  @media screen and (min-width: 768px) {
-    width: 180px;
-    height: 59px;
-  }
-}
-
-.gallery-navdots {
-  width: 62px;
-  height: 80px;
-  fill: $yellow;
-
-
-  @media screen and (min-width: 768px) {
-  }
-}

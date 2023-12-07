@@ -45,11 +45,11 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'events-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/events.js', array(), false, true );
   }
   
-  if ( is_page_template('templates/event.php') ) {
+  if ( is_page_template('templates/category-event.php') ) {
     wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/assets/styles/vendors/swiper.css', array('main') );
-    wp_enqueue_style( 'event-style', get_template_directory_uri() . '/assets/styles/template-styles/event.css', array('main') );
+    wp_enqueue_style( 'event-style', get_template_directory_uri() . '/assets/styles/template-styles/category-event.css', array('main') );
     wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() . '/assets/scripts/vendors/swiper-bundle.js', array(), false, true );
-    wp_enqueue_script( 'event-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/event.js', array(), false, true );
+    wp_enqueue_script( 'event-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/category-event.js', array(), false, true );
   }
 
  

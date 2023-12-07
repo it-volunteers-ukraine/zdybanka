@@ -4,7 +4,7 @@ Template Name: events
 */
 get_header();
 // global $post;
-$category_name = 'Events';
+$category_name = 'event';
 $pagination_page = 0;
 $category_id =  get_cat_ID($category_name);
 $posts_per_page = get_field('events_count');
@@ -14,6 +14,8 @@ $params = array(
     'offset' => $pagination_page
 );
 $my_posts = get_posts($params);
+$is_end_post_list = $posts_per_page;
+
 ?>
 
 <section class="section">
@@ -38,7 +40,7 @@ $my_posts = get_posts($params);
         <div class="events">
             <div class="title-wraprer title">
                 <h2 class="events-title"><?php the_field('events_title'); ?></h1>
-                    <a href="<?php the_field('events_calendar_link'); ?>" class='calendar-link'>
+                    <a href="<?php the_field('events_calendar_link'); ?>" target='_blank' class='calendar-link'>
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/calendar-icon.svg" class='calendar-icon' alt="calendar icon" />
                     </a>
             </div>
@@ -48,19 +50,15 @@ $my_posts = get_posts($params);
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/sort.svg" class='event-sort-icon' alt="sort icon" />
                     </button>
                 </div>
-                <!-- <div class='event-card'> -->
-
+                <!-- <?php print_r(wp_count_posts()->publish); ?> -->
+                <!-- <?php print_r($is_end_post_list) ?> -->
+                <!-- <?php echo $is_end_post_list ?> -->
                 <ul class="event-list">
                     <?php foreach ($my_posts as $post) :
                         $event_img = get_field('event_photos', $post)[0]['sizes']['medium_large'];
                         $event_img_alt = get_field('event_photos', $post)[0]['alt'];
                         $event_link = $post->guid;
-                        // $event_link = get_field('event_photos', $post)['link'];
-                        // print_r($post);
                     ?>
-                        <!-- <?php print_r(get_field('event_photos', $post)[0]) ?>  -->
-                        <!-- <?php print_r($event_link); ?> -->
-
                         <li class="event-item">
                             <a href="<?php echo $event_link ?>">
                                 <div class="img-wrapper">
@@ -71,21 +69,16 @@ $my_posts = get_posts($params);
                             </a>
                         </li>
                     <?php endforeach ?>
-
                 </ul>
-                <div class="paginate-more">
+                <div class="paginate-more <?php echo $is_end_post_list ? 'hidden1' : ''; ?>">
                     <button type='button' class="paginate-btn">
                         <img src="<?php bloginfo('template_url'); ?>/assets/images/btn-open-more.svg" alt="event4">
                     </button>
                 </div>
-                <!-- </div> -->
             </div>
         </div>
 
-
     </div>
 </section>
-
-
 
 <?php get_footer(); ?>
