@@ -1,0 +1,1 @@
+const swiperSuccessfulProjects=new Swiper(".successful-projects-swiper",{loop:!0,pagination:{el:".successful-projects-swiper-pagination"},navigation:{nextEl:".successful-projects-swiper-btn-next",prevEl:".successful-projects-swiper-btn-prev"}});
