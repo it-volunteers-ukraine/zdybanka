@@ -43,8 +43,8 @@ function scripts() {
 // }
 
 function watching() {  
-  watch(['src/styles/*.scss', 'src/styles/components/*.scss'], styles)
-  watch(['src/images/**/*'], images)
+  watch('src/styles/**/*.scss', styles)
+  watch('src/images/**/*', images)
   watch('src/scripts/**/*.js', scripts)
   // watch(['src/scripts/template-scripts/*js', 'src/scripts/vendors/*.js'], scriptsTemplates)
 }
