@@ -62,6 +62,14 @@ function add_google_fonts() {
  
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
+/** add swiper */
+function add_swiper() {
+  wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css' );
+  wp_enqueue_script( 'swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js' );
+}
+
+add_action( 'wp_enqueue_scripts', 'add_swiper' );
+
 /** Register menus */
 function wp_it_volunteers_menus() {
   $locations = array(
@@ -98,3 +106,4 @@ if( function_exists('acf_add_options_page') ) {
       'parent_slug'   => 'theme-general-settings',
   ));
 }
+
