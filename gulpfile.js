@@ -21,17 +21,17 @@ function stylesTemplates() {
     'src/styles/template-styles/*.scss',
     )
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-    .pipe(scss({ outputStyle: 'compressed' }))
+    .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(dest('assets/styles/template-styles'));
 
 }
 
 function styles() {
   return src(
-    'src/styles/main.scss',
+    'src/styles/*.scss',
     )
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-    .pipe(scss({ outputStyle: 'compressed' }))
+    .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(dest('assets/styles'));
 
   }
@@ -54,8 +54,8 @@ function scriptsTemplates() {
 }
 
 function watching() {  
-  watch('src/styles/*scss', styles)
-  watch('src/styles/template-styles/*scss', stylesTemplates)    
+  watch('src/styles/template-styles/*.scss', stylesTemplates)    
+  watch(['src/styles/*.scss', 'src/styles/components/*.scss'], styles)
   watch(['src/images'], images)
   watch('src/scripts/*js', scripts)
   watch('src/scripts/template-scripts/*js', scriptsTemplates)
@@ -69,3 +69,4 @@ exports.scripts = scripts;
 exports.scriptsTemplates = scriptsTemplates;
 exports.watching = watching;
 exports.default = parallel(styles, stylesTemplates, images, scripts, scriptsTemplates, watching);
+exports.build = series(styles, stylesTemplates, images, scripts, scriptsTemplates);
