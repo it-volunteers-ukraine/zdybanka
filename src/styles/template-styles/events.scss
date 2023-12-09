@@ -1,3 +1,5 @@
+@import '../_variables';
+
 .title-wraprer {
   display: flex;
   align-items: center;
@@ -20,12 +22,13 @@
 }
 
 .calendar-icon {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
+  fill: $yellow;
 }
 .events-main-title {
   font-size: 28px;
-  color: #f2b800;
+  color: $yellow;
   font-weight: 900;
 
   @media screen and (min-width: 768px) {
@@ -53,12 +56,14 @@
   padding: 0;
   background-color: transparent;
   border: none;
+
 }
 
 .events-sort-icon {
   width: 40px;
   height: 30px;
   right: 0;
+  fill: $yellow;
 
   @media screen and (min-width: 768px) {
     width: 53px;
@@ -81,6 +86,10 @@
   @media screen and (min-width: 1200px) {
     margin-top: 56px;
   }
+}
+
+.icon-btn-open-more{
+  fill: $yellow;
 }
 
 .paginate-more.hidden {

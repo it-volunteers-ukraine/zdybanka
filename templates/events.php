@@ -24,21 +24,27 @@ $is_end_post_list = $posts_per_page > count($my_posts);
             <div class="title-wraprer title">
                 <h2 class="events-main-title"><?php the_field('events_title'); ?></h2>
                 <a href="<?php the_field('events_calendar_link'); ?>" target='_blank' class='calendar-link'>
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/calendar-icon.svg" class='calendar-icon' alt="calendar icon" />
+                    <svg class="calendar-icon" alt="calendar" width="48" height="48">
+                        <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-calendar"></use>
+                    </svg>
                 </a>
             </div>
             <div class="events-wrapper">
                 <div class="events-service">
                     <button type='button' class='sort-button'>
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/sort.svg" class='events-sort-icon' alt="sort icon" />
+                        <svg class="events-sort-icon" alt="sorting">
+                            <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-sort-btn"></use>
+                        </svg>
                     </button>
                 </div>
 
                 <?php get_template_part('parts/events', null, $my_posts); ?>
-                
+
                 <div class="paginate-more <?php echo $is_end_post_list ? 'hidden' : ''; ?>">
                     <button type='button' class="paginate-btn">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/btn-open-more.svg" alt="event4">
+                        <svg class="icon-btn-open-more" alt="btn-more">
+                            <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-btn-open-more"></use>
+                        </svg>
                     </button>
                 </div>
             </div>
