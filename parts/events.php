@@ -9,6 +9,7 @@
             $event_link = $post->guid;
     ?>
             <li class="events-item">
+                
                 <a href="<?php echo $event_link ?>">
                     <div class="events-card">
                         <img src="<?php echo $event_img ?>" alt="<?php echo $event_img_alt ?>">

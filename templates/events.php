@@ -37,7 +37,7 @@ $is_end_post_list = $posts_per_page > count($my_posts);
                         </svg>
                     </button>
                 </div>
-
+                
                 <?php get_template_part('parts/events', null, $my_posts); ?>
 
                 <div class="paginate-more <?php echo $is_end_post_list ? 'hidden' : ''; ?>">
