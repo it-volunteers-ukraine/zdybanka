@@ -45,7 +45,7 @@
             </div>
             <div class="footer__events">
                 <div class="footer__events-container">
-                    <h3 class="footer__title"><?php the_field('footer-events-title', 'option'); ?></h3> 
+                    <h3 class="footer__title footer__title-left"><?php the_field('footer-events-title', 'option'); ?></h3> 
 
                     <div class="footer__event">
                         <ul class="footer__event-list">
@@ -69,8 +69,7 @@
                                     <div class="footer__event-img"><img src="<?php echo $event_img ?>" alt="<?php echo $event_img_alt ?>"></div>
                                     <div class="footer__event-content">
                                         <a href="<?php echo $event_link ?>" class="footer__event-title"><?php echo $event_title ?></a>
-                                        <p class="footer__event-date"><?php echo $event_date ?></p>                                    
-                                        <!-- <a href="<?php the_permalink(); ?>" class="footer__event-title"><?php the_field('event_title', $post); ?>  -->
+                                        <p class="footer__event-date"><?php echo $event_date ?></p>
                                     </div>    
                                 </div>
                                 </a>
@@ -81,7 +80,7 @@
 
                 </div>    
                 <div class="footer__contacts">
-                    <h3 class="footer__title"><?php the_field('footer-contacts-title', 'option'); ?></h3> 
+                    <h3 class="footer__title footer__title-left"><?php the_field('footer-contacts-title', 'option'); ?></h3> 
 
                     <div class="footer__contacts-content">
                         <svg class="footer__contacts-icon">
@@ -108,7 +107,7 @@
             </div>
         </div>
         <div class="footer__copyright">
-            <p class="footer__text">&#169; <?php the_field('footer_year-name', 'option'); ?> </p>        
+            <p class="footer__text">&copy <?php echo date( "Y" ); ?> <?php the_field('footer-name', 'option'); ?> </p>
         </div> 
     </div>    
 </footer>
