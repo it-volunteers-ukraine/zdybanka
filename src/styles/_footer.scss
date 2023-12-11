@@ -239,22 +239,41 @@
     }
     &__event {
        border-radius: 1px solid white;
-       overflow:auto;
+       /*overflow:auto;
        @media (min-width: 767.98px) {
         height: 75px;
        }      
        @media (min-width: 991.98px) {
         height: 220px;
        }
-       @media screen and (min-width: 1200px) {
+       @media (min-width: 1200px) {
         width: 342px;     
+       }*/
+       &-list {}
+       &-item {
+        margin-bottom: 20px;
+        &:last-of-type {margin-bottom: 0px;}
        }
-       &-link {
+       &-wrapper {
+        display: flex;
+        gap: 8px;
+       }
+       &-img {
+        position: relative;
+        width: 120px;
+        height: auto;
+        img {
+            object-fit: cover;
+            min-width: 120px;            
+        }
+       }
+       &-content {}
+       &-title {
         color: rgba(255, 255, 255, 0.70); 
         font-size: 14px;
         font-weight: 500;
         line-height: 14px; 
-        text-align: center;
+        //text-align: center;
         margin-bottom: 15px;
         @media (min-width: 767.98px) {
             font-size: 10px;
