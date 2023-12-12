@@ -139,8 +139,8 @@ if (! function_exists('events_more_ajax')) {
       $loop_args = [
           'post_type'      => 'post',
           'cat'            => $category_id,
-          // 'posts_per_page' => get_field('events_count', 2),
-          'posts_per_page' => 2,
+          'posts_per_page' => get_field('events_count'),
+          // 'posts_per_page' => 4,
           // 'paged'          => 1,
           // 'offset'   => $_POST['offset']
         ];
