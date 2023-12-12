@@ -14,6 +14,7 @@ if ( ! function_exists('wp_it_volunteers_setup')) {
   add_action( 'after_setup_theme', 'wp_it_volunteers_setup' );
 }
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -41,10 +42,14 @@ function wp_it_volunteers_scripts() {
   }
 
   if ( is_page_template('templates/events.php') ) {
+    $front_scripts_args = [
+      'ajaxUrl' => admin_url('admin-ajax.php'),
+  ];
     wp_enqueue_style( 'events-style', get_template_directory_uri() . '/assets/styles/template-styles/events.css', array('main') );
     wp_enqueue_script( 'events-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/events.js', array(), false, true );
     wp_enqueue_style( 'events-parts-style', get_template_directory_uri() . '/assets/styles/parts-styles/events.css', array() );
-    // wp_enqueue_script( 'events-parts-scripts', get_template_directory_uri() . '/assets/scripts/parts-scripts/events.js', array(), false, true );
+    wp_enqueue_script( 'events-parts-scripts', get_template_directory_uri() . '/assets/scripts/parts-scripts/events.js', array(), false, true );
+    wp_localize_script('events-parts-scripts', 'vars', $front_scripts_args);
   }
   
   if ( is_page_template('templates/category-event.php') ) {
@@ -118,3 +123,59 @@ if( function_exists('acf_add_options_page') ) {
   ));
 }
 
+add_action('wp_ajax_events_more', 'events_more_ajax');
+add_action('wp_ajax_nopriv_events_more', 'events_more_ajax');
+
+if (! function_exists('events_more_ajax')) {
+    /**
+     * @return void
+     */
+    function events_more_ajax()
+    {
+        // $cases = theme_get_more_cases($_POST);
+      $category_name = 'event';
+      $category_id =  get_cat_ID($category_name);
+      
+      $loop_args = [
+          'post_type'      => 'post',
+          'cat'            => $category_id,
+          // 'posts_per_page' => get_field('events_count', 2),
+          'posts_per_page' => 2,
+          // 'paged'          => 1,
+          // 'offset'   => $_POST['offset']
+        ];
+        
+        $loop_args['orderby'] = 'date';
+        $loop_args['order']   = $_POST['sort'];
+        $loop_args['offset']   = $_POST['offset'];
+
+
+      $loop        = new WP_Query($loop_args);
+      $events       = $loop->get_posts();
+      $html_string = '';
+
+      foreach ($events as $event) {
+          ob_start();
+          get_template_part('parts/event-item', null, $event);
+          $html_string .= ob_get_contents();
+          ob_end_clean();
+      }
+
+      $res = [
+          'status'  => true,
+          'post'    => $_POST,
+          'html'    => $html_string,
+          'posts_count' => count($events),
+          'events'  => $events,
+          'loop_args'   => $loop_args,
+
+
+          // 'current' => $cases['current'],
+          // 'cases'   => $cases['cases'],
+          // 'html'    => $cases['html'],
+          // 'max'     => $cases['maxPage'],
+      ];
+
+      wp_send_json($res);
+    }
+}
