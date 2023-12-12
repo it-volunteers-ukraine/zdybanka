@@ -38,17 +38,17 @@
     <div class="gallery-paginate">
         <div class="gallery-nav">
             <button typpe="button" class='nav-btn swiper-button-prev'>
-                <svg class="gallery-arrow">
+                <svg class="gallery-arrow icon">
                     <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-previous-btn" alt="arrow left"></use>
                 </svg>
             </button>
-            <button typpe="button" class='nav-btn'>
-                <svg class="gallery-navdots">
+            <button typpe="button" class='nav-btn '>
+                <svg class="gallery-navdots ">
                     <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-nav-dots" alt="nav dots"></use>
                 </svg>
             </button>
-            <button typpe="button" class='nav-btn swiper-button-next'>
-                <svg class="gallery-arrow">
+            <button typpe="button" class='nav-btn swiper-button-next '>
+                <svg class="gallery-arrow icon">
                     <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-next-btn" alt="arrow right"></use>
                 </svg>
             </button>

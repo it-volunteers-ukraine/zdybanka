@@ -1,3 +1,6 @@
+@import '../variables';
+@import '../components/buttons';
+
 .gallery-wrapper {
   margin-bottom: 9px;
   /* margin-left: auto;
@@ -17,7 +20,7 @@
 
 .slider1 {
   max-width: 576px;
-  outline: 1px solid red;
+  /* outline: 1px solid red;*/
 
   @media screen and (min-width: 768px) {
     margin-left: 20px;
@@ -40,7 +43,7 @@
   display: none;
   max-width: 160px;
   width: 160px;
-  outline: 1px solid blue;
+  /* outline: 1px solid blue; */
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -107,7 +110,9 @@
 }
 
 .nav-btn {
-  @extend .btn-reset;
+  @extend .btn-clear; 
+  @extend .btn-icon;
+
 }
 
 .gallery-arrow {
