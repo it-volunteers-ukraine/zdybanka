@@ -42,22 +42,22 @@
                             </div> 
                             <div class="header__social">
                                 <a href="<?php the_field('facebok_link', 'option'); ?>" target="_blank">
-                                    <svg class="header__social-facebook">
+                                    <svg class="header__social-link">
                                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-facebook" alt="facebook"></use>
                                     </svg>
                                 </a>   
                                 <a href="<?php the_field('telegram_link', 'option'); ?>" target="_blank">
-                                    <svg class="header__social-telegram">
+                                    <svg class="header__social-link">
                                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-telegram" alt="telegram"></use>
                                     </svg>
                                 </a> 
                                 <a href="<?php the_field('instagram_link', 'option'); ?>" target="_blank">
-                                    <svg class="header__social-instagram">
+                                    <svg class="header__social-link">
                                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-instagram" alt="instagram"></use>
                                     </svg>
                                 </a>  
                                 <a href="<?php the_field('calendar_link', 'option'); ?>" target="_blank">
-                                    <svg class="header__social-calendar">
+                                    <svg class="header__social-link">
                                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-calendar" alt="calendar"></use>
                                     </svg>
                                 </a>   
@@ -66,18 +66,6 @@
                         </nav>                         
                     </div>
                 </div>
-            </div>   
-            <div class="header__about">
-                <div class="container-header">
-                    <div class="header__about-container">
-                        <?php 
-                        if ( has_custom_logo() ) {
-                            echo get_custom_logo();
-                        }
-                        ?>
-                        <p class="header__about-text"><?php the_field('header__about-text', 'option'); ?></p>
-                    </div>
-                </div>  
-            </div>   
+            </div>  
         </header>  
 	
