@@ -57,24 +57,16 @@ html {
     }   
     @media (min-width: 1199.98px) {
       justify-content: center;
-    } 
-    @media (min-width: 1280px) {        
-      /*margin: 300px 0 0px;   */                          
-    }
+    }     
     &-logo {      
       img {
         width: 74px;
         height: auto;
         @media (min-width: 767.98px) {
           width: 84px;          
-        }
-        @media (min-width: 991.98px) {
-          /*width: 95px;
-          height: 100px;*/
-        }
+        }        
         @media (min-width: 1280px) {
-          width: 128px;
-          /*height: 115px;*/
+          width: 128px;          
         }   
       }
     }    
@@ -110,17 +102,10 @@ html {
         right: -18px;
       }       
       @media (min-width: 1200px) {
-        width: 1792px;
-        /*top: 100px;
-        right: -300px;*/
-        bottom: -24px;
-        right: 50%;
-      }  
-      @media (min-width: 1280px) {
-        /*width: 1792px;
-        top: 115px;
-        right: -300px;*/
-      } 
+        width: 1792px;        
+        bottom: -24px;        
+        right: -25%;
+      }       
     }
   }
   &__list {

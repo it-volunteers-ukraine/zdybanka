@@ -105,7 +105,8 @@
                                 
                 </div>
             </div>
-        </div>
+            <a href="#header" class="footer__btn-header">↑</a>
+        </div>        
         <div class="footer__copyright">
             <p class="footer__text">&copy <?php echo date( "Y" ); ?> <?php the_field('footer-name', 'option'); ?> </p>
         </div> 
