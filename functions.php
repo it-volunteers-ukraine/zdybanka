@@ -140,7 +140,6 @@ if (! function_exists('events_more_ajax')) {
           'post_type'      => 'post',
           'cat'            => $category_id,
           'posts_per_page' => get_field('events_count'),
-          // 'posts_per_page' => 4,
           // 'paged'          => 1,
           // 'offset'   => $_POST['offset']
         ];
@@ -166,14 +165,8 @@ if (! function_exists('events_more_ajax')) {
           'post'    => $_POST,
           'html'    => $html_string,
           'posts_count' => count($events),
-          'events'  => $events,
-          'loop_args'   => $loop_args,
-
-
-          // 'current' => $cases['current'],
-          // 'cases'   => $cases['cases'],
-          // 'html'    => $cases['html'],
-          // 'max'     => $cases['maxPage'],
+          // 'events'  => $events,
+          // 'loop_args'   => $loop_args,
       ];
 
       wp_send_json($res);
