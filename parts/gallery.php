@@ -1,7 +1,24 @@
-<?php $event_photos = $args; ?>
+<?php $event_photos = $args;
+// $one_photo = count($event_photos) == 1 ? : 'one-photo' ;
+if (count($event_photos) <= 1) {
+    $attr_photo = 'one-photo';
+} elseif (count($event_photos) >= 5) {
+    $attr_photo = 'full-photo';
+} elseif (count($event_photos) == 2) {
+    $attr_photo = 'two-photo';
+} else {
+    $attr_photo = 'three-photo';
+}
+
+// print_r(count($event_photos));
+// print_r($one_photo);
+// print_r($one_photo ? 'one-photo' : '');
+
+$five_and_more_photo = count($event_photos) >= 5 ? True : False;
+?>
 
 <div class="container-gallery">
-    <div class="gallery-wrapper">
+    <div id='gallery-wrapper' class="gallery-wrapper <?php echo $attr_photo  ?>">
 
         <div class="slider0 swiper">
             <div class="image-slider__wrapper swiper-wrapper">

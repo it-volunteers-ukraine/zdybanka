@@ -1,6 +1,9 @@
 // console.log("parts-script/events.js");
 const ajaxUrl = vars.ajaxUrl;
 
+
+
+
 const sortBtnRef = document.querySelector("#sort-btn");
 const paginationMoreRef = document.querySelector('.paginate-more');
 const loadMoreBtnRef = document.querySelector("#load-more");
