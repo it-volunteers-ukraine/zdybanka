@@ -1,7 +1,15 @@
 // import Swiper;
 
+const galleryWrapperRef = document.querySelector('#gallery-wrapper');
+
+const isOnePhoto = galleryWrapperRef.classList.contains('one-photo');
+const isThreePhoto = galleryWrapperRef.classList.contains('three-photo');
+const isFullPhoto = galleryWrapperRef.classList.contains('full-photo');
+
+console.log('isFullPhoto: ',isFullPhoto)
+
 const swiper1Ref = document.getElementsByClassName(".image-slider0");
-const isDesktop = window.innerWidth > 1199 ? 1 : 0;
+const isDesktop = window.innerWidth > 1199 && isFullPhoto ? 1 : 0;
 const initialSlideForSlider1 = 1 + isDesktop;
 
 const intervalDebounce = 300;
@@ -85,7 +93,9 @@ const swiper2 = new Swiper(".slider2", {
 
 const adaptiveSlider = (e) => {
   const widtWin = window.innerWidth;
-  if (widtWin > 1199) {
+  if (widtWin > 1199 && isFullPhoto) {
+    console.log('full-photo')
+
     console.log(swiper2);
     if (swiper0.params.slidesPerView == 2) {
       return;
@@ -99,6 +109,7 @@ const adaptiveSlider = (e) => {
     }
     
   }else {
+    console.log('not-full-photo')
     if (swiper0.params.slidesPerView == 1) {
       return;
     } else {

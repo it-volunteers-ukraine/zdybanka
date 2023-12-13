@@ -1,7 +1,24 @@
-<?php $event_photos = $args; ?>
+<?php $event_photos = $args;
+// $one_photo = count($event_photos) == 1 ? : 'one-photo' ;
+if (count($event_photos) <= 1) {
+    $attr_photo = 'one-photo';
+} elseif (count($event_photos) >= 5) {
+    $attr_photo = 'full-photo';
+} elseif (count($event_photos) == 2) {
+    $attr_photo = 'two-photo';
+} else {
+    $attr_photo = 'three-photo';
+}
+
+// print_r(count($event_photos));
+// print_r($one_photo);
+// print_r($one_photo ? 'one-photo' : '');
+
+$five_and_more_photo = count($event_photos) >= 5 ? True : False;
+?>
 
 <div class="container-gallery">
-    <div class="gallery-wrapper">
+    <div id='gallery-wrapper' class="gallery-wrapper <?php echo $attr_photo  ?>">
 
         <div class="slider0 swiper">
             <div class="image-slider__wrapper swiper-wrapper">
@@ -38,17 +55,17 @@
     <div class="gallery-paginate">
         <div class="gallery-nav">
             <button typpe="button" class='nav-btn swiper-button-prev'>
-                <svg class="gallery-arrow">
+                <svg class="gallery-arrow icon">
                     <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-previous-btn" alt="arrow left"></use>
                 </svg>
             </button>
-            <button typpe="button" class='nav-btn'>
-                <svg class="gallery-navdots">
+            <button typpe="button" class='nav-btn '>
+                <svg class="gallery-navdots ">
                     <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-nav-dots" alt="nav dots"></use>
                 </svg>
             </button>
-            <button typpe="button" class='nav-btn swiper-button-next'>
-                <svg class="gallery-arrow">
+            <button typpe="button" class='nav-btn swiper-button-next '>
+                <svg class="gallery-arrow icon">
                     <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-next-btn" alt="arrow right"></use>
                 </svg>
             </button>

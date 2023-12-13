@@ -55,8 +55,11 @@ function wp_it_volunteers_scripts() {
   if ( is_page_template('templates/category-event.php') ) {
     wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/assets/styles/vendors/swiper.css', array('main') );
     wp_enqueue_style( 'event-style', get_template_directory_uri() . '/assets/styles/template-styles/category-event.css', array('main') );
+    wp_enqueue_style( 'gallery-parts-style', get_template_directory_uri() . '/assets/styles/parts-styles/gallery.css', array() );
     wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() . '/assets/scripts/vendors/swiper-bundle.js', array(), false, true );
     wp_enqueue_script( 'event-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/category-event.js', array(), false, true );
+    wp_enqueue_script( 'gallery-parts-scripts', get_template_directory_uri() . '/assets/scripts/parts-scripts/gallery.js', array(), false, true );
+
   }
   
   // if (is_singular() && is_page_template('parts/gallery.php')) {
@@ -135,11 +138,13 @@ if (! function_exists('events_more_ajax')) {
         // $cases = theme_get_more_cases($_POST);
       $category_name = 'event';
       $category_id =  get_cat_ID($category_name);
+      $page_events_id = get_page_by_path('events')->ID;
       
       $loop_args = [
           'post_type'      => 'post',
           'cat'            => $category_id,
-          'posts_per_page' => get_field('events_count'),
+          'posts_per_page' => get_field('events_count', $page_events_id),
+          // 'posts_per_page' => 4,
           // 'paged'          => 1,
           // 'offset'   => $_POST['offset']
         ];
@@ -165,8 +170,8 @@ if (! function_exists('events_more_ajax')) {
           'post'    => $_POST,
           'html'    => $html_string,
           'posts_count' => count($events),
-          // 'events'  => $events,
-          // 'loop_args'   => $loop_args,
+          'events'  => $events,
+          'loop_args'   => $loop_args,
       ];
 
       wp_send_json($res);
