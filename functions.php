@@ -140,16 +140,28 @@ if (! function_exists('events_more_ajax')) {
       $category_id =  get_cat_ID($category_name);
       $page_events_id = get_page_by_path('events')->ID;
       
+      $today = date('d.m.Y');
+
       $loop_args = [
           'post_type'      => 'post',
           'cat'            => $category_id,
           'posts_per_page' => get_field('events_count', $page_events_id),
+          'meta_query' => array(
+            array(
+              'key' => 'event_date',
+              'value' => $today,
+              'compare' => '>=',
+              'type' => 'DATE',
+            )
+          ),
+          'meta_key' => 'event_date',
+          'orderby' => 'meta_value_num',
           // 'posts_per_page' => 4,
           // 'paged'          => 1,
           // 'offset'   => $_POST['offset']
         ];
         
-        $loop_args['orderby'] = 'date';
+        // $loop_args['orderby'] = 'date';
         $loop_args['order']   = $_POST['sort'];
         $loop_args['offset']   = $_POST['offset'];
 
