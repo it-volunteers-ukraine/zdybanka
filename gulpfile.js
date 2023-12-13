@@ -54,5 +54,5 @@ exports.images = images;
 exports.scripts = scripts;
 exports.scriptsTemplates = scriptsTemplates;
 exports.watching = watching;
-exports.default = parallel(styles, images, scripts, watching);
-exports.build = series(styles,  images, scripts);
+exports.default = parallel(styles, images, scripts, watching, scriptsTemplates);
+exports.build = series(styles,  images, scripts, scriptsTemplates);
