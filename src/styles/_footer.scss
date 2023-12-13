@@ -226,7 +226,7 @@
     &__event {       
        &-item {
         margin-bottom: 20px;
-        &:last-of-type {margin-bottom: 0px;}
+        &:last-of-type {margin-bottom: 0px;}        
        }
        &-wrapper {
         display: flex;
@@ -234,11 +234,11 @@
        }
        &-img {
         position: relative;        
-        width: 120px;        
+        width: 80px;        
         height: auto;
         img {
             object-fit: cover;
-            min-width: 120px;
+            min-width: 80px;
             max-height: 80px;            
         }
        }       
@@ -248,11 +248,11 @@
         line-height: 14px; 
         @media screen and (min-width: 1280px) {
             font-size: 14px;        
-        }
+        }     
         &:hover {        
-            transition: ease 0.5s;
-            border-bottom: 1px solid $yellow;             
-        }
+            transition: ease 0.2s;
+            transform: scale(1.03);            
+        }   
        }
        &-date {
         color: rgba(255, 255, 255, 0.70);        

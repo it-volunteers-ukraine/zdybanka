@@ -68,7 +68,7 @@
                                 <div class="footer__event-wrapper">
                                     <div class="footer__event-img"><img src="<?php echo $event_img ?>" alt="<?php echo $event_img_alt ?>"></div>
                                     <div class="footer__event-content">
-                                        <a href="<?php echo $event_link ?>" class="footer__event-title"><?php echo $event_title ?></a>
+                                        <p href="<?php echo $event_link ?>" class="footer__event-title"><?php echo $event_title ?></p>
                                         <p class="footer__event-date"><?php echo $event_date ?></p>
                                     </div>    
                                 </div>

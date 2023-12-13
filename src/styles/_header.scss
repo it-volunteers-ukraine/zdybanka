@@ -185,6 +185,12 @@ html {
 
 
 /*Burger=================================*/
+body.lock {
+  @media (max-width: 991.98px) {           
+      overflow: hidden; 
+  }
+} 
+
 .icon-menu {
   display: none;     
   @media(max-width: 991.98px) {        
