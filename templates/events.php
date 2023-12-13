@@ -5,17 +5,6 @@ Template Name: events
 get_header();
 // global $post;
 
-// 'meta_query' => array(
-//     array(
-//       'key' => 'event_date',
-//       'value' => $today,
-//       'compare' => '>=',
-//       'type' => 'DATE',
-//     )
-//   ),
-//   'meta_key' => 'event_date',
-//   'orderby' => 'meta_value_num',
-
 $today = date('d.m.Y');
 $category_name = 'event';
 $category_id =  get_cat_ID($category_name);
