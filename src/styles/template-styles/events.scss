@@ -58,6 +58,10 @@
 .sort-button {
   @extend .btn-clear;
 
+  &:disabled .events-sort-icon{
+    fill: $btn-disabled;
+  }
+
 }
 
 .events-sort-icon {
@@ -74,6 +78,7 @@
 }
 
 .paginate-more {
+
   display: flex;
   justify-content: center;
   margin-top: 24px;
@@ -88,11 +93,15 @@
   &.hidden{
     display: none;
   }
-
+  
 }
 
 .paginate-btn {
   @extend .btn-clear;
+
+  &:disabled .icon-btn-open-more{
+    fill: $btn-disabled;
+  }
 }
 
 .icon-btn-open-more{
@@ -102,6 +111,8 @@
     width: 173px;
     height: 144px;
   }
+
+ 
   
 }
 

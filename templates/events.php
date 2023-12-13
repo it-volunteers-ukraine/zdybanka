@@ -54,7 +54,7 @@ $is_end_post_list = $page == $max_pages;
             </div>
             <div class="events-wrapper">
                 <div class="events-service">
-                    <button id='sort-btn' type='button' class='sort-button' data-sort='desc'>
+                    <button id='sort-btn' type='button' class='sort-button' data-sort='desc' >
                         <svg class="events-sort-icon" alt="sorting">
                             <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-sort-btn"></use>
                         </svg>
@@ -64,7 +64,7 @@ $is_end_post_list = $page == $max_pages;
                 <?php get_template_part('parts/events', null, ['my_post' => $my_posts, 'params' => $params]); ?>
 
                 <div class="paginate-more <?php echo $is_end_post_list ? 'hidden' : ''; ?>">
-                    <button id='load-more' type='button' class="paginate-btn">
+                    <button id='load-more' type='button' class="paginate-btn" >
                         <svg class="icon-btn-open-more" alt="btn-more">
                             <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-btn-open-more"></use>
                         </svg>
