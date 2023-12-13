@@ -13,7 +13,6 @@ $event_text = get_field('event_text', $post);
 $event_link_in_calendar = get_field('event_link_in_calendar', $post);
 $event_photos = get_field('event_photos', $post);
 
-// $now_date = date("d.m.Y");
 $isShowAddCalendar = strtotime((string)$event_date) >= strtotime(date("d.m.Y"));
 
 ?>
