@@ -28,8 +28,8 @@ function styles() {
 function scripts() {
   return src([
     'src/scripts/**/*.js'
-  ])
-    // .pipe(concat('main.js'))
+  ])  
+    .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(dest('assets/scripts'))
 }
