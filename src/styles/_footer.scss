@@ -311,6 +311,9 @@
         padding: 12px 20px;
         background-color: $gray;
         font-size: 25px;
+        @media (min-width: 767.98px) {
+            display: none;
+        }
     }
     
     /*Copyright============================*/
