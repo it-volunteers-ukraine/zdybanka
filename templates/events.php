@@ -18,8 +18,6 @@ $params = array(
     'meta_query' => array(
         array(
             'key' => 'event_date',
-            'value' => $today,
-            'compare' => '>=',
             'type' => 'DATE',
         )
     ),
