@@ -39,6 +39,10 @@
 <symbol id="icon-sort-btn" viewBox="0 0 32 32">
 <path d="M16.703 7.797l-1.406 1.406-5.281-5.266-0.016 28.063h-2l0.016-28.109-5.313 5.313-1.406-1.406 7.703-7.703 7.703 7.703zM29.313 22.797l1.422 1.406-7.703 7.703-7.719-7.703 1.422-1.406 5.281 5.281-0.016-28.078h2l0.016 28.094 5.297-5.297z"></path>
 </symbol>
+<symbol id="icon-sort-btn-two" viewBox="0 0 32 32">
+<path fill="var(--icon-sort-color-left, #f2b800)" stroke="var(--icon-sort-stroke-left, #ffffff00)" stroke-width="1" d="M16.703 7.797l-1.406 1.406-5.281-5.266-0.016 28.063h-2l0.016-28.109-5.313 5.313-1.406-1.406 7.703-7.703 7.703 7.703z"></path>
+<path fill="var(--icon-sort-color-right, #f2b800)" stroke="var(--icon-sort-stroke-right, #ffffff00)" stroke-width="1" d="M29.313 22.797l1.422 1.406-7.703 7.703-7.719-7.703 1.422-1.406 5.281 5.281-0.016-28.078h2l0.016 28.094 5.297-5.297z"></path>
+</symbol>
 <symbol id="icon-next-menu" viewBox="0 0 32 32">
 <path d="M7.486 27.341l11.341-11.341-11.341-11.366 3.491-3.491 14.857 14.857-14.857 14.857-3.491-3.516z"></path>
 </symbol>

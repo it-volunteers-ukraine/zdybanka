@@ -57,11 +57,40 @@
 
 .sort-button {
   @extend .btn-clear;
+  
+  &[data-sort='desc'] .events-sort-icon{
+    --icon-sort-color-left: rgba(242, 184, 0, 0.3);
+    --icon-sort-color-right: $yellow;
 
-  &:disabled .events-sort-icon{
-    fill: $btn-disabled;
+  }
+  &[data-sort='asc'] .events-sort-icon{
+    --icon-sort-color-left: $yellow;
+    --icon-sort-color-right: rgba(242, 184, 0, 0.3);
+
   }
 
+  &[data-sort='desc']:hover:not(:disabled) .events-sort-icon{
+    --icon-sort-color-left: $btn-hover;
+    --icon-sort-stroke-left: #FFCE32;
+  }
+
+  &[data-sort='asc']:hover:not(:disabled) .events-sort-icon{
+    --icon-sort-color-right: $$btn-hover;
+    --icon-sort-stroke-right: #FFCE32;
+  }
+
+  &:disabled .events-sort-icon{
+    --icon-sort-color-left: rgba(242, 184, 0, 0.1);
+    --icon-sort-color-right: rgba(242, 184, 0, 0.1);
+    --icon-sort-stroke-left: #ffffff00;
+    --icon-sort-stroke-right: #ffffff00;
+
+  }
+
+  /*&:disabled .events-sort-icon{
+    --icon-sort-color-left: $icon-diabled;
+    --icon-sort-color-right: $icon-diabled;
+  }*/
 }
 
 .events-sort-icon {
