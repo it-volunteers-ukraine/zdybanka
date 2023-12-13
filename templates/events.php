@@ -4,6 +4,7 @@ Template Name: events
 */
 get_header();
 // global $post;
+
 $category_name = 'event';
 $category_id =  get_cat_ID($category_name);
 $posts_per_page =  (int) get_field('events_count');
@@ -19,7 +20,7 @@ $params = array(
 );
 $my_posts = get_posts($params);
 $is_end_post_list = $posts_per_page < count($my_posts);
-
+// echo $post->ID;
 ?>
 
 <section class="section">

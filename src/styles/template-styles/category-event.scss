@@ -1,6 +1,8 @@
-@import "../variables.scss";
-@import "../components/gallery.scss";
+@import '../variables.scss';
+@import '../_components.scss';
+/* @import '../parts-styles/gallery.scss'; */
 
+/*
 .btn-reset {
   border: none;
   background-color: transparent;
@@ -40,6 +42,7 @@
   background-color: white;
   border: 1px solid #f2b800;
 }
+*/ 
 
 .event-title {
   font-size: 28px;
@@ -101,21 +104,28 @@
 }
 
 .event-btn-main {
-  @extend .btn-main;
+  @extend .btn-yellow; 
+  @extend .btn-icon;
+
+  /*@extend .btn-main; */
 
   & .icon {
-    stroke: white;
-    margin-left: 8px;
+    /* stroke: white;*/
+    margin-left: 8px; 
   }
 }
 
 .event-btn-inverse {
+  @extend .btn-white; 
+  @extend .btn-icon-black;
+  
   & .icon {
-    stroke: black;
+    /* stroke: black; */
     margin-left: 8px;
   }
 
-  @extend .btn-inverse;
+  /*@extend .btn-inverse; */
+
   margin-bottom: 16px;
 
   @media screen and (min-width: 768px) {

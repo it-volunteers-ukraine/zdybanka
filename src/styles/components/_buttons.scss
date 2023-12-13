@@ -3,6 +3,7 @@ You can use this class for button
  btn-yellow           - main button
  btn-white            - main white button
  btn-icon             - button for icons
+ btn-icon-black       - button for black icons
  btn-socseti-yellow   - button yellow for socseti
  btn-socseti-white    - button white for socseti
  btn-clear - utils, delete all styles from button
@@ -44,11 +45,13 @@ You can use this class for button
 }
 
 #svg-yellow {
+  
+  fill: $yellow;
+  
   & .icon {
     fill: inherit;
+    stroke: white;
   }
-
-  fill: $yellow;
 
   &:hover,
   &:focus {
@@ -58,6 +61,17 @@ You can use this class for button
   &:active {
     fill: $btn-pressed;
   }
+}
+
+#svg-black {
+  fill: $black2;
+  stroke: $black2;
+
+  & .icon {
+    fill: inherit;
+    stroke: $black2;
+  }
+
 }
 
 #btn-yellow {
@@ -98,7 +112,7 @@ You can use this class for button
   align-items: center;
   width: 241px;
   height: 56px;
-  padding: 16px 24px;
+  padding: 16px 16px;
   border-radius: 8px;
   color: white;
   font-size: 16px;
@@ -144,6 +158,10 @@ You can use this class for button
   @extend #svg-yellow;
   @extend #svg-animation;
 
+}
+
+.btn-icon-black{
+  @extend #svg-black;
 }
 
 .btn-socseti-yellow {
