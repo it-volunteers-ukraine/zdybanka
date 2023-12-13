@@ -15,6 +15,16 @@ get_header();
             </p>
         </div>
     </section>
+    <section  class="section info">
+        <div class="container info__container">
+
+            <img class="info__img" src="<?php the_field('info__img'); ?>" alt="info">
+
+        <p class="info__text">
+                    <?php the_field('info__text'); ?>
+</p>
+        </div>
+    </section>
     <section class="section description" id="about">
         <div class="container description__wrapper">
             <div class="description__box">
@@ -66,25 +76,7 @@ get_header();
             <h2 class="events__title title">
                 <?php the_field('events__title'); ?>
             </h2>
-            <?php
-            if (have_rows('events__item')): ?>
-                <ul class="events__list">
-                    <?php while (have_rows('events__item')):
-                        the_row(); ?>
-                        <li class="events__item">
-                            <div class="events__img">
-                                <img src="<?php the_sub_field('events__img'); ?>" alt="events" />
-                            </div>
-                            <p class="events__text">
-                                <?php the_sub_field('events__text'); ?>
-                            </p>
-                            <p class="events__date">
-                                <?php the_sub_field('events__date'); ?>
-                            </p>
-                        </li>
-                    <?php endwhile; ?>
-                </ul>
-            <?php endif; ?>
+            <?php get_template_part('parts/events', null, ['my_post'=>$my_posts, 'params'=>$params ]); ?>
             <?php
             $link = get_field('events__name');
             if ($link):
