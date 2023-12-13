@@ -26,26 +26,25 @@ function styles() {
   }
 
 function scripts() {
-  return src([
-    'src/scripts/**/*.js'
-  ])
-    // .pipe(concat('main.js'))
+  return src(
+    'src/scripts/*.js'
+  )
+    .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(dest('assets/scripts'))
 }
 
-// function scriptsTemplates() {
-//   return src([
-//     'src/scripts/template-scripts/*.js',
-//   ])
-//     .pipe(uglify())
-//     .pipe(dest([ 'assets/scripts/template-scripts']))
-// }
+function scriptsTemplates() {
+  return src('src/scripts/*/*.js')
+    .pipe(uglify())
+    .pipe(dest('assets/scripts'))
+}
 
 function watching() {  
   watch('src/styles/**/*.scss', styles)
   watch('src/images/**/*', images)
-  watch('src/scripts/**/*.js', scripts)
+  watch('src/scripts/*.js', scripts)
+  watch('src/scripts/*/*.js', scriptsTemplates)
   // watch(['src/scripts/template-scripts/*js', 'src/scripts/vendors/*.js'], scriptsTemplates)
 }
 
@@ -53,7 +52,7 @@ function watching() {
 exports.styles = styles;
 exports.images = images;
 exports.scripts = scripts;
-// exports.scriptsTemplates = scriptsTemplates;
+exports.scriptsTemplates = scriptsTemplates;
 exports.watching = watching;
-exports.default = parallel(styles, images, scripts, watching);
-exports.build = series(styles,  images, scripts);
+exports.default = parallel(styles, images, scripts, watching, scriptsTemplates);
+exports.build = series(styles,  images, scripts, scriptsTemplates);
