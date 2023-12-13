@@ -27,8 +27,18 @@ $params = array(
     // 'orderby' => 'date', // сортировать по дате
     'order' => 'DESC', // по убыванию (сначала - свежие посты)
 );
-$my_posts = get_posts($params);
-$is_end_post_list = $posts_per_page < count($my_posts);
+$loop = new WP_Query($params);
+$my_posts = $loop->get_posts();
+$max_pages = $loop->max_num_pages;
+$found_posts = $loop->found_posts;
+
+$is_end_post_list = $page == $max_pages;
+
+
+// $my_posts = get_posts($params);
+// print_r($loop);
+// print_r($offset);
+// $is_end_post_list = $posts_per_page < count($my_posts);
 ?>
 
 <section class="section">

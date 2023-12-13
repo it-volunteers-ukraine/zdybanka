@@ -184,8 +184,10 @@ if (! function_exists('events_more_ajax')) {
           'post'    => $_POST,
           'html'    => $html_string,
           'posts_count' => count($events),
-          'events'  => $events,
+          // 'events'  => $events,
           'loop_args'   => $loop_args,
+          'max_page'  => $loop->max_num_pages,
+          'total_posts' => $loop->found_posts,
       ];
 
       wp_send_json($res);
