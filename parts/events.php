@@ -15,6 +15,7 @@ if (isset($args['params'])) {
 
     <?php if ($my_posts) :
         foreach ($my_posts as $post) :
+            // print_r(gettype($post->event_date));
             get_template_part('parts/event-item', null, $post);
 
         endforeach ?>

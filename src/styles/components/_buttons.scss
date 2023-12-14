@@ -25,10 +25,10 @@ You can use this class for button
 }
 
 #svg-animation {
-  transition: background-color $animations;
+  transition: all $animations;
 
-  & .icon{
-    transition: fill $animations;
+  & .icon {
+    transition: all $animations;
   }
 }
 
@@ -45,9 +45,8 @@ You can use this class for button
 }
 
 #svg-yellow {
-  
   fill: $yellow;
-  
+
   & .icon {
     fill: inherit;
     stroke: white;
@@ -71,7 +70,6 @@ You can use this class for button
     fill: inherit;
     stroke: $black2;
   }
-
 }
 
 #btn-yellow {
@@ -85,6 +83,7 @@ You can use this class for button
   &:active {
     background-color: $btn-pressed;
   }
+
 }
 
 #btn-white {
@@ -120,7 +119,7 @@ You can use this class for button
   background-color: $yellow;
   border: none;
   cursor: pointer;
-  transition: background-color $animations;
+  transition: all $animations;
 
   & img {
     margin-left: 8px;
@@ -133,6 +132,11 @@ You can use this class for button
   &:active {
     background-color: $btn-pressed;
   }
+  &:disabled {
+    background-color: $btn-disabled;
+    cursor: initial;
+  }
+  
 }
 
 .btn-white {
@@ -148,6 +152,10 @@ You can use this class for button
   &:active {
     background-color: $btn-inv-pressed;
   }
+  &:disabled {
+    background-color: $btn-inv-disabled;
+    cursor: initial;
+  }
 }
 
 .btn-clear {
@@ -157,10 +165,9 @@ You can use this class for button
 .btn-icon {
   @extend #svg-yellow;
   @extend #svg-animation;
-
 }
 
-.btn-icon-black{
+.btn-icon-black {
   @extend #svg-black;
 }
 
@@ -182,4 +189,9 @@ You can use this class for button
   &:focus {
     fill: white;
   }
+}
+
+.btn-disabled-yellow{
+  background-color: red;
+  cursor: initial;
 }

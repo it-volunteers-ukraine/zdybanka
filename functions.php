@@ -140,18 +140,32 @@ if (! function_exists('events_more_ajax')) {
       $category_id =  get_cat_ID($category_name);
       $page_events_id = get_page_by_path('events')->ID;
       
+      // $today = date('d.m.Y');
+
       $loop_args = [
           'post_type'      => 'post',
           'cat'            => $category_id,
           'posts_per_page' => get_field('events_count', $page_events_id),
+          'meta_query' => array(
+            array(
+              'key' => 'event_date',
+              // 'value' => $today,
+              // 'compare' => '>=',
+              'type' => 'DATE',
+            )
+          ),
+          'meta_key' => 'event_date',
+          'orderby' => 'meta_value_num',
+          'order'   => $_POST['sort'],
+          'offset'  => $_POST['offset'],
           // 'posts_per_page' => 4,
           // 'paged'          => 1,
           // 'offset'   => $_POST['offset']
         ];
         
-        $loop_args['orderby'] = 'date';
-        $loop_args['order']   = $_POST['sort'];
-        $loop_args['offset']   = $_POST['offset'];
+        // $loop_args['orderby'] = 'date';
+        // $loop_args['order']   = $_POST['sort'];
+        // $loop_args['offset']   = $_POST['offset'];
 
 
       $loop        = new WP_Query($loop_args);
@@ -170,8 +184,10 @@ if (! function_exists('events_more_ajax')) {
           'post'    => $_POST,
           'html'    => $html_string,
           'posts_count' => count($events),
-          'events'  => $events,
+          // 'events'  => $events,
           'loop_args'   => $loop_args,
+          'max_page'  => $loop->max_num_pages,
+          'total_posts' => $loop->found_posts,
       ];
 
       wp_send_json($res);
