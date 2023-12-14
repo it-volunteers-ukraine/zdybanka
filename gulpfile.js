@@ -26,9 +26,9 @@ function styles() {
   }
 
 function scripts() {
-  return src(
+  return src([
     'src/scripts/*.js'
-  )
+  ])
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(dest('assets/scripts'))
