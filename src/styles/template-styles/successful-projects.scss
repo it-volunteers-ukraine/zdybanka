@@ -1,0 +1,157 @@
+.successful-projects   {
+  margin: 80px 0;
+
+  &-inner {
+    &__title {
+      color: #F2B800FF;
+      text-align: right;
+      font-family: Montserrat, sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      margin: 0 0 80px 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+
+      &-item {
+        &-descr {
+          color: #0D0D0D;
+          font-family: Montserrat, sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          margin: 0 0 40px 0;
+        }
+      }
+    }
+
+  }
+
+  &-inner__list-item-photo {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.successful-projects-swiper-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10.5px 0;
+  align-items: center;
+  margin: 16px 0 0 0;
+}
+
+.successful-projects-svg {
+  fill: #F2B800FF;
+}
+
+.successful-projects-swiper-pagination {
+  align-items: center;
+  gap: 8px;
+  display: flex;
+  justify-content: center;
+  position: relative !important;
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 18px;
+  height: 18px;
+  background-color: #F2B800FF;
+  border-radius: 50%;
+}
+
+span.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: #FFF;
+  border-radius: 50%;
+  border: 2.5px solid #F2B800FF;
+  margin: 0;
+  opacity: 1;
+}
+
+.successful-projects-swiper-btn-next, .successful-projects-swiper-btn-prev {
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 992px) {
+  .successful-projects {
+    margin: 64px 0;
+
+    &-inner {
+      &__title {
+        margin: 0 0 64px 0;
+      }
+
+      &__list {
+        gap: 64px;
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .successful-projects {
+    margin: 64px 0;
+
+    &-inner {
+      &__list {
+        gap: 40px;
+
+        &-item {
+          &-descr {
+            font-size: 20px;
+            margin: 0 0 24px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .successful-projects {
+    margin: 24px 0;
+
+    &-inner {
+      &__title {
+        margin: 0 0 24px 0;
+        font-size: 28px;
+        text-align: center;
+      }
+
+      &__list {
+        gap: 40px;
+
+        &-item {
+          &-descr {
+            font-size: 16px;
+            margin: 0 16px 16px 16px;
+          }
+        }
+      }
+    }
+  }
+
+  svg.successful-projects-svg {
+    width: 86px;
+    height: 28px;
+  }
+  .successful-projects-swiper-buttons {
+    margin: 0 14px;
+    padding: 26px 0;
+  }
+  .swiper-slide.swiper-slide-active {
+    height: 400px;
+  }
+  img.successful-projects-inner__list-item-photo {
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
