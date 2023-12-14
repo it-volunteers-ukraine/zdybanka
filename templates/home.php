@@ -126,39 +126,20 @@ get_header();
             </h2>
 
             <?php
-            if (have_rows('docs__item')): ?>
-                <ul class="docs__list">
-                    <?php while (have_rows('docs__item')):
-                        the_row(); ?>
-                        <li class="docs__item">
-                            <?php
-                            $link = get_sub_field('docs__name');
-                            if ($link):
-                                $link_url = $link['url'];
-                                $link_title = $link['title'];
-                                $link_target = $link['target'] ? $link['target'] : '_self';
-                                ?>
-                                <a class="docs__name" href="<?php echo esc_url($link_url); ?>"
-                                    target="<?php echo esc_attr($link_target); ?>">
-                                    <?php echo esc_html($link_title); ?>
-                                    <?php
-                                    $open_arrow = get_stylesheet_directory() . '/assets/images/open.svg';
-                                    echo file_get_contents($open_arrow);
-                                    ?>
-                                </a>
-                            <?php endif; ?>
-                        </li>
-                    <?php endwhile; ?>
-                </ul>
-            <?php endif; ?>
-
-
-            <div>
-                <?php the_field('docs__link'); ?>
-            </div>
-            <div>
-                <?php the_field('docs__link-sec'); ?>
-            </div>
+            $open_arrow = get_stylesheet_directory() . '/assets/images/open.svg';
+            $rows = get_field('docs__links');
+            if ($rows) {
+                echo '<ul class="docs__list">';
+                foreach ($rows as $row) {
+                    $name = $row['doc__link__name'];
+                    $link = $row['doc__link'];
+                    echo '<li class="docs__item">';
+                    echo '<p class="docs__name">' . $name . file_get_contents($open_arrow) . '</p>';
+                    echo '<div class="docs__doc">' . $link . '</div>';
+                    echo '</li>';
+                }
+                echo '</ul>';
+            } ?>
         </div>
     </section>
     <section class="section contacts" id="contacts">

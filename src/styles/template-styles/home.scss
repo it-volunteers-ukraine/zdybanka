@@ -184,6 +184,7 @@
   }
 }
 .benefits {
+  padding-top: 0;
   &__list {
     display: flex;
     flex-direction: column;
@@ -291,6 +292,7 @@
 }
 
 .events {
+  padding-top: 0;
   &__title {
     color: $yellow;
     margin-top: 24px;
@@ -418,6 +420,7 @@
 }
 
 .gallery {
+  padding-top: 0;
   &__title {
     color: $yellow;
     margin-top: 24px;
@@ -445,6 +448,7 @@
 }
 
 .partners {
+  padding-top: 0;
   &__title {
     color: $yellow;
     text-align: center;
@@ -504,6 +508,7 @@
 }
 
 .docs {
+  padding-top: 0;
   &__title {
     color: $yellow;
     text-align: center;
@@ -535,6 +540,16 @@
     }
   }
   &__item {
+  }
+
+  &__item.docs__expanded &__doc {
+    display: block;
+  }
+
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 8px;
     border: 1px solid $yellow;
     padding: 8px 16px;
@@ -548,15 +563,32 @@
     @media (min-width: 1200px) {
       font-size: 16px;
     }
+
+    svg {
+      pointer-events: none;
+      min-width: 24px;
+    }
+
+    .docs__item.docs__expanded & {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
   }
-  &__name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  &__doc {
+    display: none;
+    margin-top: 8px;
+    height: 500px;
+    & iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 .contacts {
+  padding-top: 0;
   &__title {
     color: $yellow;
     text-align: center;

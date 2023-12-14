@@ -1,35 +1,16 @@
-// add swiper
+const list = document.querySelector(".docs__list");
+list.addEventListener("click", (e) => {
+  const el = e.target;
+  const parentEl = el.parentElement;
+  const exp = "docs__expanded";
 
-// new Swiper(".gallery-slider", {
-//   direction: "horizontal",
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   dynamicBullets: true,
-//   dynamicMainBullets: 3,
-//   navigation: {
-//     nextEl: ".gallery__arrow-next",
-//     prevEl: ".gallery__arrow-prev",
-//   },
-//   loop: true,
-//   watchOverflow: true,
-//   pagination: {
-//     el: ".gallery__pagination",
-//     clickable: true,
-//   },
-//   autoHeight: false,
-//   breakpoints: {
-//     0: {
-//       slidesPerView: 1,
-//       dynamicBullets: true,
-//       dynamicMainBullets: 3,
-//     },
-//     768: {
-//       slidesPerView: 3,
-//       dynamicBullets: true,
-//       dynamicMainBullets: 3,
-//     },
-//     1920: {
-//       slidesPerView: 5,
-//     },
-//   },
-// });
+  if (!el.classList.contains("docs__name")) return;
+
+  if (parentEl.classList.contains(exp)) {
+    console.log("hide");
+    parentEl.classList.remove(exp);
+  } else {
+    console.log("show");
+    parentEl.classList.add(exp);
+  }
+});
