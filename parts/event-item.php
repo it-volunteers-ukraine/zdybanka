@@ -6,7 +6,7 @@ $event_link = $post->guid;
 ?>
 
 <li class="events-item">
-    <a href="<?php echo $event_link ?>">
+    <a href="<?php echo $event_link ?>" class='events-link'>
         <div class="events-card">
             <img src="<?php echo $event_img ?>" alt="<?php echo $event_img_alt ?>">
             <h2 class="events-title"><?php the_field('event_title', $post_id) ?></h2>

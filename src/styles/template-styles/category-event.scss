@@ -106,13 +106,17 @@
 .event-btn-main {
   @extend .btn-yellow; 
   @extend .btn-icon;
-
+  
+  
   /*@extend .btn-main; */
-
+  
   & .icon {
     /* stroke: white;*/
     margin-left: 8px; 
   }
+  /*&:disabled {
+    @extend .btn-disabled-yellow;
+  }*/
 }
 
 .event-btn-inverse {

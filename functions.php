@@ -53,6 +53,15 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true );
   }
 
+    if( is_post_type_archive('project') ){
+      wp_enqueue_style('style-swiper',  'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
+      wp_enqueue_style( 'contacts-style', get_template_directory_uri() . '/assets/styles/template-styles/successful-projects.css', array('main') );
+      wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), null, true);
+      wp_enqueue_script('successful-projects', get_template_directory_uri() . '/assets/scripts/template-scripts/successful-projects.js', array(), null, true);
+  }
+}
+
+
   if ( is_page_template('templates/events.php') ) {
     $front_scripts_args = [
       'ajaxUrl' => admin_url('admin-ajax.php'),
@@ -84,12 +93,17 @@ function wp_it_volunteers_scripts() {
   //   wp_enqueue_script( 'events-parts-scripts', get_template_directory_uri() . '/assets/scripts/parts-scripts/events.js', array(), false, true );
   // }
 
- }
+
+
 /** add fonts */
 function add_google_fonts() {
   wp_enqueue_style( 'google_web_fonts', 'https://fonts.googleapis.com/css?family=Montserrat:wght@400;500;600;700;900&display=swap' );
   wp_enqueue_style( 'google_web_fonts', 'https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600&display=swap' );
 }
+
+
+
+
  
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
@@ -136,7 +150,54 @@ if( function_exists('acf_add_options_page') ) {
       'menu_title'    => 'Footer',
       'parent_slug'   => 'theme-general-settings',
   ));
+
+  acf_add_options_sub_page(array(
+        'page_title'    => 'Project Settings',
+        'menu_title'    => 'Projects',
+        'parent_slug'   => 'theme-general-settings',
+    ));
 }
+
+function register_custom_post_type() {
+    $labels = array(
+        'name'               => _x( 'Успішні проекти', 'post type general name', 'textdomain' ),
+        'singular_name'      => _x( 'Проект', 'post type singular name', 'textdomain' ),
+        'menu_name'          => _x( 'Проекти', 'admin menu', 'textdomain' ),
+        'name_admin_bar'     => _x( 'Проект', 'add new on admin bar', 'textdomain' ),
+        'add_new'            => _x( 'Додати новий', 'Проект', 'textdomain' ),
+        'add_new_item'       => __( 'Додати новий проект', 'textdomain' ),
+        'new_item'           => __( 'Новий проект', 'textdomain' ),
+        'edit_item'          => __( 'Редагувати проект', 'textdomain' ),
+        'view_item'          => __( 'Переглянути проект', 'textdomain' ),
+        'all_items'          => __( 'Всі проекти', 'textdomain' ),
+        'search_items'       => __( 'Шукати проекти', 'textdomain' ),
+        'not_found'          => __( 'Проекти не знайдено', 'textdomain' ),
+        'not_found_in_trash' => __( 'Проекти не знайдено в кошику', 'textdomain' ),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'projects' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array( 'title'),
+    );
+
+    register_post_type( 'project', $args );
+}
+
+add_action( 'init', 'register_custom_post_type' );
+
+
+
+
 
 add_action('wp_ajax_events_more', 'events_more_ajax');
 add_action('wp_ajax_nopriv_events_more', 'events_more_ajax');
@@ -152,18 +213,32 @@ if (! function_exists('events_more_ajax')) {
       $category_id =  get_cat_ID($category_name);
       $page_events_id = get_page_by_path('events')->ID;
       
+      // $today = date('d.m.Y');
+
       $loop_args = [
           'post_type'      => 'post',
           'cat'            => $category_id,
           'posts_per_page' => get_field('events_count', $page_events_id),
+          'meta_query' => array(
+            array(
+              'key' => 'event_date',
+              // 'value' => $today,
+              // 'compare' => '>=',
+              'type' => 'DATE',
+            )
+          ),
+          'meta_key' => 'event_date',
+          'orderby' => 'meta_value_num',
+          'order'   => $_POST['sort'],
+          'offset'  => $_POST['offset'],
           // 'posts_per_page' => 4,
           // 'paged'          => 1,
           // 'offset'   => $_POST['offset']
         ];
         
-        $loop_args['orderby'] = 'date';
-        $loop_args['order']   = $_POST['sort'];
-        $loop_args['offset']   = $_POST['offset'];
+        // $loop_args['orderby'] = 'date';
+        // $loop_args['order']   = $_POST['sort'];
+        // $loop_args['offset']   = $_POST['offset'];
 
 
       $loop        = new WP_Query($loop_args);
@@ -182,10 +257,13 @@ if (! function_exists('events_more_ajax')) {
           'post'    => $_POST,
           'html'    => $html_string,
           'posts_count' => count($events),
-          'events'  => $events,
+          // 'events'  => $events,
           'loop_args'   => $loop_args,
+          'max_page'  => $loop->max_num_pages,
+          'total_posts' => $loop->found_posts,
       ];
 
       wp_send_json($res);
     }
 }
+
