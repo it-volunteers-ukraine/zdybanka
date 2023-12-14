@@ -45,18 +45,42 @@
             </div>
             <div class="footer__events">
                 <div class="footer__events-container">
-                    <h3 class="footer__title"><?php the_field('footer-events-title', 'option'); ?></h3> 
+                    <h3 class="footer__title footer__title-left"><?php the_field('footer-events-title', 'option'); ?></h3> 
+
                     <div class="footer__event">
-                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <a href="<?php echo get_the_permalink(); ?>" class="footer__event-link"><?php the_title(); ?></a>
-                    <p class="footer__event-date"><?php the_time( 'j F Y' ); ?></p>                    
-                    <?php endwhile; else: ?>
-                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-                    <?php endif; ?>
-                </div>
+                        <ul class="footer__event-list">
+                            <?php $params = array(
+                                'category_name' => 'event',
+                                'posts_per_page' => 2
+                            );
+
+                            $my_posts = get_posts($params);
+                            foreach ($my_posts as $post) :
+                                $event_img = get_field('event_photos', $post)[0]['sizes']['thumbnail'];
+                                $event_img_alt = get_field('event_photos', $post)[0]['alt'];
+                                $event_title = get_field('event_title', $post);
+                                $event_date = get_field('event_date', $post);
+                                $event_link = $post->guid;
+                            ?> 
+                            
+                            <li class="footer__event-item">
+                                <a href="<?php echo $event_link ?>">                                
+                                <div class="footer__event-wrapper">
+                                    <div class="footer__event-img"><img src="<?php echo $event_img ?>" alt="<?php echo $event_img_alt ?>"></div>
+                                    <div class="footer__event-content">
+                                        <p href="<?php echo $event_link ?>" class="footer__event-title"><?php echo $event_title ?></p>
+                                        <p class="footer__event-date"><?php echo $event_date ?></p>
+                                    </div>    
+                                </div>
+                                </a>
+                            </li>
+                            <?php endforeach ?>
+                        </ul> 
+                    </div>  
+
                 </div>    
                 <div class="footer__contacts">
-                    <h3 class="footer__title"><?php the_field('footer-contacts-title', 'option'); ?></h3> 
+                    <h3 class="footer__title footer__title-left"><?php the_field('footer-contacts-title', 'option'); ?></h3> 
 
                     <div class="footer__contacts-content">
                         <svg class="footer__contacts-icon">
@@ -81,9 +105,10 @@
                                 
                 </div>
             </div>
-        </div>
+            <a href="#header" class="footer__btn-header">↑</a>
+        </div>        
         <div class="footer__copyright">
-            <p class="footer__text">&#169; <?php the_field('footer_year-name', 'option'); ?> </p>        
+            <p class="footer__text">&copy <?php echo date( "Y" ); ?> <?php the_field('footer-name', 'option'); ?> </p>
         </div> 
     </div>    
 </footer>
