@@ -1,5 +1,5 @@
-@import '../_variables';
-@import '../_components';
+@import "../_variables";
+@import "../_components";
 
 .title-wraprer {
   display: flex;
@@ -57,34 +57,31 @@
 
 .sort-button {
   @extend .btn-clear;
-  
-  &[data-sort='desc'] .events-sort-icon{
+
+  &[data-sort="desc"] .events-sort-icon {
     --icon-sort-color-left: rgba(242, 184, 0, 0.3);
     --icon-sort-color-right: $yellow;
-
   }
-  &[data-sort='asc'] .events-sort-icon{
+  &[data-sort="asc"] .events-sort-icon {
     --icon-sort-color-left: $yellow;
     --icon-sort-color-right: rgba(242, 184, 0, 0.3);
-
   }
 
-  &[data-sort='desc']:hover:not(:disabled) .events-sort-icon{
+  &[data-sort="desc"]:hover:not(:disabled) .events-sort-icon {
     --icon-sort-color-left: $btn-hover;
-    --icon-sort-stroke-left: #FFCE32;
+    --icon-sort-stroke-left: #ffce32;
   }
 
-  &[data-sort='asc']:hover:not(:disabled) .events-sort-icon{
+  &[data-sort="asc"]:hover:not(:disabled) .events-sort-icon {
     --icon-sort-color-right: $$btn-hover;
-    --icon-sort-stroke-right: #FFCE32;
+    --icon-sort-stroke-right: #ffce32;
   }
 
-  &:disabled .events-sort-icon{
+  &:disabled .events-sort-icon {
     --icon-sort-color-left: rgba(242, 184, 0, 0.1);
     --icon-sort-color-right: rgba(242, 184, 0, 0.1);
     --icon-sort-stroke-left: #ffffff00;
     --icon-sort-stroke-right: #ffffff00;
-
   }
 
   /*&:disabled .events-sort-icon{
@@ -95,6 +92,7 @@
 
 .events-sort-icon {
   @extend .btn-icon;
+  /*transition: all $animations; */
 
   @media screen and (min-width: 768px) {
     width: 53px;
@@ -107,7 +105,6 @@
 }
 
 .paginate-more {
-
   display: flex;
   justify-content: center;
   margin-top: 24px;
@@ -119,30 +116,24 @@
     margin-top: 56px;
   }
 
-  &.hidden{
+  &.hidden {
     display: none;
   }
-  
 }
 
 .paginate-btn {
   @extend .btn-clear;
 
-  &:disabled .icon-btn-open-more{
+  &:disabled .icon-btn-open-more {
     fill: $btn-disabled;
   }
 }
 
-.icon-btn-open-more{
+.icon-btn-open-more {
   @extend .btn-icon;
 
   @media screen and (min-width: 768px) {
     width: 173px;
     height: 144px;
   }
-
- 
-  
 }
-
-

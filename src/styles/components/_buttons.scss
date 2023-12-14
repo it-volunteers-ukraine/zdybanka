@@ -25,10 +25,10 @@ You can use this class for button
 }
 
 #svg-animation {
-  transition: background-color $animations;
+  transition: all $animations;
 
   & .icon {
-    transition: fill $animations;
+    transition: all $animations;
   }
 }
 
@@ -119,7 +119,7 @@ You can use this class for button
   background-color: $yellow;
   border: none;
   cursor: pointer;
-  transition: background-color $animations;
+  transition: all $animations;
 
   & img {
     margin-left: 8px;
