@@ -81,7 +81,7 @@ function wp_it_volunteers_scripts() {
   //   wp_enqueue_script( 'events-parts-scripts', get_template_directory_uri() . '/assets/scripts/parts-scripts/events.js', array(), false, true );
   // }
 
- 
+
 
 /** add fonts */
 function add_google_fonts() {
