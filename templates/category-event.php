@@ -31,7 +31,7 @@ $isShowAddCalendar = strtotime((string)$event_date) >= strtotime(date("d.m.Y"));
                     </svg>
                 </button>
                 <?php if ($isShowAddCalendar == True) : ?>
-                    <button type='button' class="event-btn-main" <?php echo  $event_link_in_calendar == '' ?  'disabled' : '' ?> >Додати в календар
+                    <button type='button' class="event-btn-main" onclick='window.open("<?php echo $event_link_in_calendar ?>", "_blank")'  <?php echo  $event_link_in_calendar == '' ?  'disabled' : '' ?>>Додати в календар
                         <svg class="icon" alt="plus" width="20" height="20">
                             <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-button-next" alt="next"></use>
                         </svg>
