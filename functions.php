@@ -219,6 +219,8 @@ if (! function_exists('events_more_ajax')) {
           'orderby' => 'meta_value_num',
           'order'   => $_POST['sort'],
           'offset'  => $_POST['offset'],
+          'post_status'   => 'publish',
+
           // 'posts_per_page' => 4,
           // 'paged'          => 1,
           // 'offset'   => $_POST['offset']
