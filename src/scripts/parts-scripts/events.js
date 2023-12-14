@@ -13,6 +13,7 @@ const eventsQueryParams = {
   offset: 0,
   action: "events_more",
   sort: sortBtnRef.getAttribute("data-sort"),
+  post_status: 'publish',
 };
 
 const controlBtnLoadMore = (getPosts) => {
