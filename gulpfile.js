@@ -9,26 +9,15 @@ const newer = require('gulp-newer');
 
 
 function images() {
-  return src('src/images/*.*')
+  return src('src/images/**/*.*')
     .pipe(newer('assets/images'))
     .pipe(imagemin())
     .pipe(dest('assets/images'))
 }
 
-
-function stylesTemplates() {
-  return src(
-    'src/styles/template-styles/*.scss',
-    )
-    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-    .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
-    .pipe(dest('assets/styles/template-styles'));
-
-}
-
 function styles() {
   return src(
-    'src/styles/*.scss',
+    'src/styles/**/*.scss',
     )
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
     .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
@@ -37,36 +26,33 @@ function styles() {
   }
 
 function scripts() {
-  return src([
+  return src(
     'src/scripts/*.js'
-  ])
+  )
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(dest('assets/scripts'))
 }
 
 function scriptsTemplates() {
-  return src([
-    'src/scripts/template-scripts/*.js'
-  ])
+  return src('src/scripts/*/*.js')
     .pipe(uglify())
-    .pipe(dest('assets/scripts/template-scripts'))
+    .pipe(dest('assets/scripts'))
 }
 
 function watching() {  
-  watch('src/styles/template-styles/*.scss', stylesTemplates)    
-  watch(['src/styles/*.scss', 'src/styles/components/*.scss'], styles)
-  watch(['src/images'], images)
-  watch('src/scripts/*js', scripts)
-  watch('src/scripts/template-scripts/*js', scriptsTemplates)
+  watch('src/styles/**/*.scss', styles)
+  watch('src/images/**/*', images)
+  watch('src/scripts/*.js', scripts)
+  watch('src/scripts/*/*.js', scriptsTemplates)
+  // watch(['src/scripts/template-scripts/*js', 'src/scripts/vendors/*.js'], scriptsTemplates)
 }
 
 
 exports.styles = styles;
-exports.stylesTemplates = stylesTemplates;
 exports.images = images;
 exports.scripts = scripts;
 exports.scriptsTemplates = scriptsTemplates;
 exports.watching = watching;
-exports.default = parallel(styles, stylesTemplates, images, scripts, scriptsTemplates, watching);
-exports.build = series(styles, stylesTemplates, images, scripts, scriptsTemplates);
+exports.default = parallel(styles, images, scripts, watching, scriptsTemplates);
+exports.build = series(styles,  images, scripts, scriptsTemplates);

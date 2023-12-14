@@ -1,0 +1,108 @@
+@import '../_variables';
+@import '../_components';
+
+.title-wraprer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 48px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 56px;
+  }
+}
+
+.calendar-link {
+  margin: 0 9px;
+  min-width: 54px;
+  @media screen and (min-width: 768px) {
+    margin: 0 0 0 24px;
+  }
+}
+
+.calendar-icon {
+  @extend .btn-icon;
+
+  width: 48px;
+  height: 48px;
+}
+
+.events-main-title {
+  font-size: 28px;
+  color: $yellow;
+  font-weight: 900;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 48px;
+  }
+}
+
+.events-service {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
+  @media screen and (min-width: 992px) {
+    margin-bottom: 16px;
+  }
+}
+
+.sort-button {
+  @extend .btn-clear;
+
+}
+
+.events-sort-icon {
+  @extend .btn-icon;
+
+  @media screen and (min-width: 768px) {
+    width: 53px;
+    height: 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 64px;
+    height: 48px;
+  }
+}
+
+.paginate-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 48px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 56px;
+  }
+
+  &.hidden{
+    display: none;
+  }
+
+}
+
+.paginate-btn {
+  @extend .btn-clear;
+}
+
+.icon-btn-open-more{
+  @extend .btn-icon;
+
+  @media screen and (min-width: 768px) {
+    width: 173px;
+    height: 144px;
+  }
+  
+}
+
+
