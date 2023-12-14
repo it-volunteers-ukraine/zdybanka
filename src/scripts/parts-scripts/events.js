@@ -44,6 +44,8 @@ async function sendAjax(data, url) {
 }
 
 sortBtnRef.addEventListener("click", () => {
+  sortBtnRef.setAttribute("disabled", 'true');
+
   if (sortBtnRef.getAttribute("data-sort") === "desc") {
     sortBtnRef.setAttribute("data-sort", "asc");
   } else {
@@ -60,21 +62,28 @@ sortBtnRef.addEventListener("click", () => {
     console.log(response);
     listElemHtmlRef.innerHTML = response.html;
     controlBtnLoadMore(response.posts_count);
+  }).finally(e => {
+    sortBtnRef.removeAttribute("disabled");
   });
 });
 
 loadMoreBtnRef.addEventListener("click", (e) => {
   let ajaxObj = eventsQueryParams;
   let currentPage = Number(listElemHtmlRef.getAttribute("page"));
+  loadMoreBtnRef.setAttribute("disabled", 'true');
 
   ajaxObj["offset"] = currentPage * postsPerPage;
 
-  sendAjax(ajaxObj, ajaxUrl).then((response) => {
-    console.log(response);
-    controlBtnLoadMore(response.posts_count);
+  sendAjax(ajaxObj, ajaxUrl)
+    .then((response) => {
+      console.log(response);
+      controlBtnLoadMore(response.posts_count);
 
-    currentPage += 1;
-    listElemHtmlRef.insertAdjacentHTML("beforeend", response.html);
-    listElemHtmlRef.setAttribute("page", currentPage);
-  });
+      currentPage += 1;
+      listElemHtmlRef.insertAdjacentHTML("beforeend", response.html);
+      listElemHtmlRef.setAttribute("page", currentPage);
+    })
+    .finally((e) => {
+      loadMoreBtnRef.removeAttribute("disabled");
+    });
 });
