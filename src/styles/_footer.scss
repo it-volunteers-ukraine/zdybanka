@@ -181,6 +181,15 @@
             margin-bottom: 32px;
             &:last-of-type {margin-bottom: 0px;}  
             &:first-of-type {margin-top: 12px;} 
+            &::before {
+                content: '';   
+                padding: 7px;  
+                margin-right: 6px;                
+                background-image: url("../../assets/images/icon-nav-next.svg"); 
+                background-size:contain;
+                background-position:center;
+                background-repeat: no-repeat;                
+            } 
             @media (min-width: 767.98px) {
                 margin-bottom: 40px;                
             }            
@@ -195,16 +204,7 @@
             &:hover {        
                 transition: ease 0.5s;
                 border-bottom: 1px solid $yellow;             
-            } 
-            &::before {
-                content: '';   
-                padding: 7px;  
-                margin-right: 6px;                
-                background-image: url("../../assets/images/icon-nav-next.svg"); 
-                background-size:contain;
-                background-position:center;
-                background-repeat: no-repeat;                
-            }            
+            }                     
         }
     }
 
