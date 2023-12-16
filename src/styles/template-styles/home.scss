@@ -67,6 +67,59 @@
   }
 }
 
+.info {
+  background-color: #0d0d0d;
+  padding: 16px 0 60px 0;
+
+  @media (min-width: 767.98px) {
+    padding: 10px 0 10px 0;
+  }
+  @media (min-width: 1200px) {
+    padding: 20px 0 20px 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 767.98px) {
+      flex-direction: row;
+    }
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      gap: 23px;
+    }
+  }
+
+  &__img {
+    width: 280px;
+    height: 280px;
+
+    @media (min-width: 767.98px) {
+      width: 210px;
+      height: 210px;
+    }
+    @media (min-width: 1200px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    @media (min-width: 767.98px) {
+      font-size: 20px;
+      text-align: initial;
+    }
+  }
+}
+
 .description {
   &__wrapper {
     display: flex;
@@ -131,6 +184,7 @@
   }
 }
 .benefits {
+  padding-top: 0;
   &__list {
     display: flex;
     flex-direction: column;
@@ -149,7 +203,6 @@
 
   &__item {
     position: relative;
-    height: 310px;
     overflow: hidden;
     @media (min-width: 767.98px) {
       width: 336px;
@@ -163,6 +216,10 @@
       width: 351px;
       height: 260px;
     }
+    @media (min-width: 1440px) {
+      width: 432px;
+      height: 320px;
+    }
     @media (min-width: 1920px) {
       width: 540px;
       height: 400px;
@@ -170,12 +227,14 @@
   }
 
   &__img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100%;
-    width: calc(100% / 2 * 3);
+    @media (min-width: 767.98px) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: calc(100% / 2 * 3);
+    }
   }
 
   &__title {
@@ -233,6 +292,7 @@
 }
 
 .events {
+  padding-top: 0;
   &__title {
     color: $yellow;
     margin-top: 24px;
@@ -360,6 +420,7 @@
 }
 
 .gallery {
+  padding-top: 0;
   &__title {
     color: $yellow;
     margin-top: 24px;
@@ -386,69 +447,8 @@
   }
 }
 
-//swiper
-
-.gallery-slider {
-  width: 100%;
-  height: 100%;
-}
-.gallery__pagination {
-  position: static;
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
-  width: auto !important;
-}
-
-.gallery__pagination .swiper-pagination-bullet {
-  border: 2px solid $yellow;
-  background-color: transparent;
-  margin-top: 16px;
-  width: 14px;
-  height: 14px;
-}
-.gallery__pagination .swiper-pagination-bullet-active {
-  background-color: $yellow;
-  border: none;
-  width: 18px;
-  height: 18px;
-}
-.gallery__arrows {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 64px;
-}
-.gallery__arrow-next,
-.gallery__arrow-prev {
-  display: inline-block;
-  height: 28px;
-  width: 86px;
-  object-fit: fill;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  @media (min-width: 767.98px) {
-    height: 59px;
-    width: 180px;
-  }
-  @media (min-width: 1200px) {
-    height: 59px;
-    width: 180px;
-  }
-}
-
-.gallery__arrow-next {
-  background-image: url("../../images/right_vector.png");
-}
-
-.gallery__arrow-prev {
-  background-image: url("../../images/right_vector.png");
-}
-
 .partners {
+  padding-top: 0;
   &__title {
     color: $yellow;
     text-align: center;
@@ -508,6 +508,7 @@
 }
 
 .docs {
+  padding-top: 0;
   &__title {
     color: $yellow;
     text-align: center;
@@ -539,6 +540,16 @@
     }
   }
   &__item {
+  }
+
+  &__item.docs__expanded &__doc {
+    display: block;
+  }
+
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 8px;
     border: 1px solid $yellow;
     padding: 8px 16px;
@@ -552,15 +563,32 @@
     @media (min-width: 1200px) {
       font-size: 16px;
     }
+
+    svg {
+      pointer-events: none;
+      min-width: 24px;
+    }
+
+    .docs__item.docs__expanded & {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
   }
-  &__name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  &__doc {
+    display: none;
+    margin-top: 8px;
+    height: 500px;
+    & iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 .contacts {
+  padding-top: 0;
   &__title {
     color: $yellow;
     text-align: center;
