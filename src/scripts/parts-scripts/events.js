@@ -13,11 +13,11 @@ const eventsQueryParams = {
   offset: 0,
   action: "events_more",
   sort: sortBtnRef.getAttribute("data-sort"),
-  post_status: 'publish',
+  post_status: "publish",
 };
 
-const controlBtnLoadMore = (getPosts) => {
-  if (getPosts < postsPerPage) {
+const controlBtnLoadMore = (responseTotalPage, currentPage) => {
+  if (responseTotalPage <= currentPage) {
     paginationMoreRef.classList.add("hidden");
   } else {
     paginationMoreRef.classList.remove("hidden");
@@ -45,7 +45,7 @@ async function sendAjax(data, url) {
 }
 
 sortBtnRef.addEventListener("click", () => {
-  sortBtnRef.setAttribute("disabled", 'true');
+  sortBtnRef.setAttribute("disabled", "true");
 
   if (sortBtnRef.getAttribute("data-sort") === "desc") {
     sortBtnRef.setAttribute("data-sort", "asc");
@@ -59,30 +59,32 @@ sortBtnRef.addEventListener("click", () => {
 
   ajaxObj["sort"] = sortBtnRef.getAttribute("data-sort");
 
-  sendAjax(ajaxObj, ajaxUrl).then((response) => {
-    console.log(response);
-    listElemHtmlRef.innerHTML = response.html;
-    controlBtnLoadMore(response.posts_count);
-  }).finally(e => {
-    sortBtnRef.removeAttribute("disabled");
-  });
+  sendAjax(ajaxObj, ajaxUrl)
+    .then((response) => {
+      console.log(response);
+      listElemHtmlRef.innerHTML = response.html;
+      controlBtnLoadMore(response.posts_coun, 1);
+    })
+    .finally((e) => {
+      sortBtnRef.removeAttribute("disabled");
+    });
 });
 
 loadMoreBtnRef.addEventListener("click", (e) => {
   let ajaxObj = eventsQueryParams;
   let currentPage = Number(listElemHtmlRef.getAttribute("page"));
-  loadMoreBtnRef.setAttribute("disabled", 'true');
+  loadMoreBtnRef.setAttribute("disabled", "true");
 
   ajaxObj["offset"] = currentPage * postsPerPage;
 
   sendAjax(ajaxObj, ajaxUrl)
     .then((response) => {
       console.log(response);
-      controlBtnLoadMore(response.posts_count);
 
       currentPage += 1;
       listElemHtmlRef.insertAdjacentHTML("beforeend", response.html);
       listElemHtmlRef.setAttribute("page", currentPage);
+      controlBtnLoadMore(response.max_page, currentPage);
     })
     .finally((e) => {
       loadMoreBtnRef.removeAttribute("disabled");
