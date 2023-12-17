@@ -92,7 +92,8 @@
 
 .events-sort-icon {
   @extend .btn-icon;
-  /*transition: all $animations; */
+  width: 40px;
+  height: 30px;
 
   @media screen and (min-width: 768px) {
     width: 53px;
