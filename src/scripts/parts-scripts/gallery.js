@@ -1,4 +1,6 @@
-console.log('parts-script/gallery.js')
+// import '../vendors/lightbox';
+// import '../vendors/lightbox-plus-jquery';
+console.log('parts-script/gallery.js');
 
 // import Swiper;
 

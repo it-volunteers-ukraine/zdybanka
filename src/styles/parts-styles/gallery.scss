@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../components/buttons";
+@import '../vendors/lightbox';
 
 .gallery-wrapper {
   margin-bottom: 9px;
@@ -156,4 +157,39 @@
 
   @media screen and (min-width: 768px) {
   }
+}
+
+.lb-cancel {
+  background: url(../../images/lightbox/loading.gif) no-repeat;
+
+}
+
+.lb-nav a.lb-prev{
+  background: url(../../images/lightbox/prev.png) left 48% no-repeat;
+
+}
+
+.lb-nav a.lb-next{
+  background: url(../../images/lightbox/next.png) right 48% no-repeat;
+
+}
+
+.lb-data .lb-close{
+  background: url(../../images/lightbox/close.png)  top right no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+
+}
+
+.lb-dataContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lb-dataContainer .lb-data{
+  padding: 0 6px;
+
 }
