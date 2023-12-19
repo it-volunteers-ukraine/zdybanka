@@ -302,104 +302,27 @@
     font-weight: 900;
     line-height: normal;
     text-align: center;
+    margin-bottom: 24px;
     @media (min-width: 767.98px) {
       margin-top: 64px;
       font-size: 48px;
       text-align: end;
+      margin-bottom: 48px;
     }
     @media (min-width: 1200px) {
       margin-top: 80px;
+      margin-bottom: 64px;
     }
   }
 
-  &__list {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  &__events__btn {
+    margin-bottom: 24px;
     @media (min-width: 767.98px) {
-      margin-top: 48px;
-      gap: 32px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      margin-bottom: 64px;
     }
-    @media (min-width: 1200px) {
-      margin-top: 56px;
-      gap: 20px;
+    @media (min-width: 991.98px) {
+      margin-bottom: 52px;
     }
-  }
-
-  &__item {
-    position: relative;
-    height: auto;
-    @media (min-width: 767.98px) {
-      height: 220px;
-    }
-    @media (min-width: 1200px) {
-      height: auto;
-    }
-  }
-  &__img {
-    background: lightgray 50% / cover no-repeat;
-  }
-
-  &__text {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    padding: 40px 24px;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      #0d0d0d 0%,
-      rgba(13, 13, 13, 0.6) 57.81%,
-      rgba(13, 13, 13, 0) 100%
-    );
-
-    color: white;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-align: center;
-    @media (min-width: 767.98px) {
-      top: 36px;
-      width: 288px;
-      font-size: 14px;
-    }
-    @media (min-width: 1200px) {
-      top: 112px;
-      font-size: 20px;
-      width: 410px;
-    }
-  }
-
-  &__date {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 12px 16px 8px 16px;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      #0d0d0d 0%,
-      rgba(13, 13, 13, 0) 100%
-    );
-    color: $yellow;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
-  @media (min-width: 767.98px) {
-    padding: 8px 8px;
-    font-size: 14px;
-  }
-  @media (min-width: 1200px) {
-    font-size: 20px;
   }
   &__name {
     display: none;
@@ -430,13 +353,16 @@
     font-weight: 900;
     line-height: normal;
     text-align: center;
+    margin-bottom: 24px;
     @media (min-width: 767.98px) {
       margin-top: 64px;
       font-size: 48px;
       text-align: start;
+      margin-bottom: 48px;
     }
     @media (min-width: 1200px) {
       margin-top: 80px;
+      margin-bottom: 64px;
     }
   }
   &__list {
@@ -539,7 +465,9 @@
       margin-top: 64px;
     }
   }
+
   &__item {
+    cursor: pointer;
   }
 
   &__item.docs__expanded &__doc {
