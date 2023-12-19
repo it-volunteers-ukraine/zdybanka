@@ -24,7 +24,9 @@ $five_and_more_photo = count($event_photos) >= 5 ? True : False;
             <div class="image-slider__wrapper swiper-wrapper">
                 <?php foreach ($event_photos as $img_list) : ?>
                     <div class="image-slider__slide swiper-slide">
-                        <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                        <a href="<?php echo $img_list['url'] ?>" class="image-slider-link" data-lightbox="roadtrip0">
+                            <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                        </a>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -34,7 +36,9 @@ $five_and_more_photo = count($event_photos) >= 5 ? True : False;
             <div class="image-slider__wrapper swiper-wrapper">
                 <?php foreach ($event_photos as $img_list) : ?>
                     <div class="image-slider__slide swiper-slide">
-                        <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                        <a href="<?php echo $img_list['url'] ?>" class="image-slider-link" data-lightbox="roadtrip1">
+                            <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                        </a>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -44,7 +48,9 @@ $five_and_more_photo = count($event_photos) >= 5 ? True : False;
             <div class="image-slider__wrapper swiper-wrapper">
                 <?php foreach ($event_photos as $img_list) : ?>
                     <div class="image-slider__slide swiper-slide">
-                        <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                        <a href="<?php echo $img_list['url'] ?>" class="image-slider-link" data-lightbox="roadtrip2">
+                            <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                        </a>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -74,3 +80,15 @@ $five_and_more_photo = count($event_photos) >= 5 ? True : False;
         <!-- <div class="swiper-button-next"></div> -->
     </div>
 </div>
+<script src="<?php bloginfo('template_url'); ?>/assets/scripts/vendors/lightbox-plus-jquery.js">
+</script>
+<script>
+    lightbox.option({
+        'AlwaysShowNavOnTouchDevices': true,
+        'wrapAround': true,
+        // 'showImageNumberLabel': false,
+        'wrapAround': true,
+        'disableScrolling': true,
+        'albumLabel': '%1 of %2'
+    })
+</script>

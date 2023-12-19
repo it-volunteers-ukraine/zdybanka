@@ -1,4 +1,6 @@
-console.log('parts-script/gallery.js')
+// import '../vendors/lightbox';
+// import '../vendors/lightbox-plus-jquery';
+console.log('parts-script/gallery.js');
 
 // import Swiper;
 
@@ -134,11 +136,4 @@ window.addEventListener("resize", (e) => {
 //   console.log("!!!!resize");
 // });
 
-console.log("event page");
-const btnMoreRef = document.getElementById("btn-more");
-const textContentRef = document.querySelector(".event-content");
 
-btnMoreRef.addEventListener("click", (e) => {
-  textContentRef.classList.toggle("clamp");
-  textContentRef.scrollIntoView({ behavior: "smooth" });
-});

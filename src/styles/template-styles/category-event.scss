@@ -103,6 +103,21 @@
   margin-bottom: 1em;
 }
 
+.event-content.clamp+.event-btn-wrapper {
+  & .btn-less-text{
+    display: none;
+  }
+}
+
+.event-content:not(.clamp)+.event-btn-wrapper {
+  & .btn-more-text{
+    display: none;
+  }
+  & .icon{
+    transform: rotate(180deg);
+  }
+}
+
 .event-btn-main {
   @extend .btn-yellow; 
   @extend .btn-icon;
@@ -136,6 +151,8 @@
     display: none;
   }
 }
+
+
 
 .event-btn-wrapper {
   display: flex;

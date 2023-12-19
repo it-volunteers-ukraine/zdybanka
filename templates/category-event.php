@@ -25,7 +25,7 @@ $isShowAddCalendar = strtotime((string)$event_date) >= strtotime(date("d.m.Y"));
                 <?php echo $event_text; ?>
             </div>
             <div class="event-btn-wrapper">
-                <button id='btn-more' type='button' class="event-btn-inverse">Показати більше
+                <button id='btn-more' type='button' class="event-btn-inverse"><span class='btn-more-text'>Показати більше</span><span class='btn-less-text'>Показати менше</span>
                     <svg class="icon" alt="more" width="20" height="20">
                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-button-open-more" alt="next"></use>
                     </svg>

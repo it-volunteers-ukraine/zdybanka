@@ -33,12 +33,6 @@ $max_pages = $loop->max_num_pages;
 $found_posts = $loop->found_posts;
 
 $is_end_post_list = $page == $max_pages;
-
-
-// $my_posts = get_posts($params);
-// print_r($loop);
-// print_r($offset);
-// $is_end_post_list = $posts_per_page < count($my_posts);
 ?>
 
 <section class="section">
