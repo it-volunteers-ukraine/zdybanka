@@ -114,8 +114,9 @@
     font-size: 20px;
     font-weight: 600;
     color: #f2b800;
-    padding: 8px;
-  
+    padding: 8px 16px;
+    background: radial-gradient(50% 50% at 50% 50%, #0D0D0D 0%, rgba(13, 13, 13, 0.00) 100%);
+
     @media screen and (min-width: 768px) {
       font-size: 14px;
     }
