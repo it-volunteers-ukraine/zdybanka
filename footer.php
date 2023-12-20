@@ -93,7 +93,7 @@
                         <svg class="footer__contacts-icon">
                             <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-email" alt="email"></use>
                         </svg>                        
-                        <p class="footer__contacts-text"><a href="mailto:<?php the_field('email-link', 'option') ?>" class="footer__contacts-text"><?php the_field('email', 'option') ?></a></p>
+                        <p class="footer__contacts-text"><a href="mailto:<?php the_field('email', 'option') ?>" class="footer__contacts-text"><?php the_field('email', 'option') ?></a></p>
                     </div>
 
                     <div class="footer__contacts-content">
