@@ -19,3 +19,14 @@ function closeMenu() {
   menu.classList.remove('active');
   document.body.classList.remove('lock');   
 }
+
+//Add custom links active style in Nav  
+const navList = document.querySelector('.header__list');
+
+navList.addEventListener('click', function(e) {
+	const navLinks = document.querySelectorAll('.menu-item-object-custom a');	
+  Array.from(navLinks).forEach(navLink => {
+  	navLink.classList.remove('current-menu-item');    
+  })
+  e.target.classList.add('current-menu-item');   
+});
