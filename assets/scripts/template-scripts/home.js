@@ -1,1 +1,1 @@
-const list=document.querySelector(".docs__list");list.addEventListener("click",(s=>{const e=s.target,t=e.parentElement,c="docs__expanded";e.classList.contains("docs__name")&&(t.classList.contains(c)?(console.log("hide"),t.classList.remove(c)):(console.log("show"),t.classList.add(c)))}));
+const list=document.querySelector(".docs__list");list.addEventListener("click",(s=>{const t=s.target,e=t.parentElement,c="docs__expanded";t.classList.contains("docs__name")&&(e.classList.contains(c)?e.classList.remove(c):e.classList.add(c))}));
