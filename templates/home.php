@@ -216,10 +216,9 @@ $is_end_post_list = $page == $max_pages;
             <div class="contacts__map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10605.465916880457!2d22.3937751!3d48.3534812!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4738f9542fcb2553%3A0x3775878ed6531bd!2z0JHQtdGA0LXQs9GW0LLRgdGM0LrQuNC5INCa0KXQnw!5e0!3m2!1suk!2sua!4v1701273286165!5m2!1suk!2sua"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="contacts__border"></div>
             <ul class="contacts__list">
                 <li class="contacts__item">
                     <div class="contacts__address-img">

@@ -7,10 +7,8 @@ list.addEventListener("click", (e) => {
   if (!el.classList.contains("docs__name")) return;
 
   if (parentEl.classList.contains(exp)) {
-    console.log("hide");
     parentEl.classList.remove(exp);
   } else {
-    console.log("show");
     parentEl.classList.add(exp);
   }
 });
