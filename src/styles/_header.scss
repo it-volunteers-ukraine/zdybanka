@@ -188,8 +188,18 @@ html {
   }  
 }
 
-.current-menu-item {color: $yellow;}
-.menu-item-object-custom {color: $black;}
+//.current-menu-item {color: $yellow;}
+.custom_active{color: $yellow;}
+//.menu-item-object-custom:not(:first-child) {color: $black;}
+.header--fixed {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;  
+  z-index: 50;
+  background-color:#FFFFFF;
+  transition: ease 0.3s;  
+}
 
 /*Burger=================================*/
 body.lock {
