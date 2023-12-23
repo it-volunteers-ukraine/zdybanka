@@ -7,14 +7,13 @@ get_header();
 ?>
 <main>
     <section class="section logo">
-        <div class="logo__img">
-            <img src="<?php the_field('logo__img', $current_id); ?>" alt="logo">
+        <div class="logo__background" style="background-image: url(<?php the_field('logo__img', $current_id); ?>);">
         </div>
-        <div class="container">
+        <!-- <div class="container"> -->
             <p class="logo__title">
                 <?php the_field('logo__title', $current_id); ?>
             </p>
-        </div>
+        <!-- </div> -->
     </section>
     <section class="section info">
         <div class="container info__container">
@@ -215,7 +214,7 @@ $is_end_post_list = $page == $max_pages;
             </h2>
             <div class="contacts__map">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10605.465916880457!2d22.3937751!3d48.3534812!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4738f9542fcb2553%3A0x3775878ed6531bd!2z0JHQtdGA0LXQs9GW0LLRgdGM0LrQuNC5INCa0KXQnw!5e0!3m2!1suk!2sua!4v1701273286165!5m2!1suk!2sua"
+                    src="<?php the_field('contacts__map__link', $current_id); ?>"
                     width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
