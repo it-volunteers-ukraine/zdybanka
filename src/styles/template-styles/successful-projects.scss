@@ -93,6 +93,12 @@ span.swiper-pagination-bullet {
       }
     }
   }
+
+  .successful-projects-inner__list-item-photo {
+    width: 100%;
+    object-fit: cover;
+    height: 320px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -111,6 +117,11 @@ span.swiper-pagination-bullet {
         }
       }
     }
+  }
+  .successful-projects-inner__list-item-photo {
+    width: 100%;
+    object-fit: cover;
+    height: 320px;
   }
 }
 
@@ -154,5 +165,12 @@ span.swiper-pagination-bullet {
     object-fit: cover;
     object-position: center;
     width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .successful-projects-inner__list-item-photo {
+    width: 100%;
+    object-fit: cover;
+    height: 560px;
   }
 }
