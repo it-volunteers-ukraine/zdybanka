@@ -122,7 +122,7 @@ $is_end_post_list = $page == $max_pages;
                     ?>
                     <a class="events__name" href="<?php echo esc_url($link_url); ?>"
                         target="<?php echo esc_attr($link_target); ?>">
-                        <?php echo esc_html($link_title); ?>
+                        <span class="events__label"><?php echo esc_html($link_title); ?></span>
                         <?php
                         $icon_arrow = get_stylesheet_directory() . '/assets/images/arrow_right.svg';
                         echo file_get_contents($icon_arrow);
