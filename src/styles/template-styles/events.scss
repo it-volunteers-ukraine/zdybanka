@@ -73,7 +73,7 @@
   }
 
   &[data-sort="asc"]:hover:not(:disabled) .events-sort-icon {
-    --icon-sort-color-right: $$btn-hover;
+    --icon-sort-color-right: $btn-hover;
     --icon-sort-stroke-right: #ffce32;
   }
 
