@@ -12,7 +12,7 @@ const eventsQueryParams = {
   posts_per_page: postsPerPage,
   offset: 0,
   action: "events_more",
-  sort: sortBtnRef.getAttribute("data-sort"),
+  sort: sortBtnRef ? sortBtnRef.getAttribute("data-sort") : "desc",
   post_status: "publish",
 };
 
@@ -44,31 +44,33 @@ async function sendAjax(data, url) {
   return responseJson;
 }
 
-sortBtnRef.addEventListener("click", () => {
-  sortBtnRef.setAttribute("disabled", "true");
+if (sortBtnRef) {
+  sortBtnRef.addEventListener("click", () => {
+    sortBtnRef.setAttribute("disabled", "true");
 
-  if (sortBtnRef.getAttribute("data-sort") === "desc") {
-    sortBtnRef.setAttribute("data-sort", "asc");
-  } else {
-    sortBtnRef.setAttribute("data-sort", "desc");
-  }
-  eventsQueryParams.offset = 0;
-  listElemHtmlRef.setAttribute("page", 1);
+    if (sortBtnRef.getAttribute("data-sort") === "desc") {
+      sortBtnRef.setAttribute("data-sort", "asc");
+    } else {
+      sortBtnRef.setAttribute("data-sort", "desc");
+    }
+    eventsQueryParams.offset = 0;
+    listElemHtmlRef.setAttribute("page", 1);
 
-  let ajaxObj = eventsQueryParams;
+    let ajaxObj = eventsQueryParams;
 
-  ajaxObj["sort"] = sortBtnRef.getAttribute("data-sort");
+    ajaxObj["sort"] = sortBtnRef.getAttribute("data-sort");
 
-  sendAjax(ajaxObj, ajaxUrl)
-    .then((response) => {
-      console.log(response);
-      listElemHtmlRef.innerHTML = response.html;
-      controlBtnLoadMore(response.posts_coun, 1);
-    })
-    .finally((e) => {
-      sortBtnRef.removeAttribute("disabled");
-    });
-});
+    sendAjax(ajaxObj, ajaxUrl)
+      .then((response) => {
+        console.log(response);
+        listElemHtmlRef.innerHTML = response.html;
+        controlBtnLoadMore(response.posts_coun, 1);
+      })
+      .finally((e) => {
+        sortBtnRef.removeAttribute("disabled");
+      });
+  });
+}
 
 loadMoreBtnRef.addEventListener("click", (e) => {
   let ajaxObj = eventsQueryParams;
