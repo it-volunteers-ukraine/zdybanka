@@ -1,32 +1,42 @@
-let line = document.querySelector('.icon-menu');
-let links = document.querySelectorAll('.menu-item');
-let menu = document.querySelector('.menu__body');
+let menuRef = document.querySelector(".icon-menu");
+let menuBodyRef = document.querySelector(".menu__body");
+let menuItemRef = document.querySelectorAll(".menu-item a");
 
-line.addEventListener('click', toogleMenu);
+console.log(menuItemRef);
+console.log(document.baseURI)
+
+for (const el of menuItemRef ){
+  if (el.href === document.baseURI){
+    el.classList.add("current-menu-item");
+  }
+}
 
 function toogleMenu() {
-  line.classList.toggle('active');  
-  menu.classList.toggle('active');
-  document.body.classList.toggle('lock');   
+  document.body.classList.toggle("lock");
+  menuRef.classList.toggle("active");
+  menuBodyRef.classList.toggle("active");
 }
 
-for (let link of links) { 
-  link.addEventListener('click', closeMenu);
+const menuLinkPress = (e) => {
+  const elem = e.target;
+  const parentUl = elem.parentElement.parentElement;
+
+  for (const parentUlLi of parentUl.children) {
+    const aRef = parentUlLi.children[0];
+
+    if (aRef === elem) {
+      aRef.classList.add("current-menu-item");
+    } else {
+      aRef.classList.remove("current-menu-item");
+    }
+    if (menuBodyRef.classList.contains("active")) {
+      toogleMenu();
+    }
+  }
+};
+
+for (let e of menuItemRef) {
+  e.addEventListener("click", menuLinkPress);
 }
 
-function closeMenu() {
-  line.classList.remove('active');  
-  menu.classList.remove('active');
-  document.body.classList.remove('lock');   
-}
-
-//Add custom links active style in Nav  
-const navList = document.querySelector('.header__list');
-
-navList.addEventListener('click', function(e) {
-	const navLinks = document.querySelectorAll('.menu-item-object-custom a');	
-  Array.from(navLinks).forEach(navLink => {
-  	navLink.classList.remove('current-menu-item');    
-  })
-  e.target.classList.add('current-menu-item');   
-});
+menuRef.addEventListener("click", toogleMenu);
