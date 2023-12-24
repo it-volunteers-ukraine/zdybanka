@@ -341,29 +341,44 @@
     }
   }
 
-  &__events__btn {
-    margin-bottom: 24px;
+  &__btn {
+    margin-top: 24px;
     @media (min-width: 767.98px) {
-      margin-bottom: 64px;
-    }
-    @media (min-width: 991.98px) {
-      margin-bottom: 52px;
+      margin-top: 48px;
     }
   }
   &__name {
-    display: none;
+    position: relative;
+    width: 120px;
+    svg {
+      width: 120px;
+      height: 40px;
+    }
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
     @media (min-width: 767.98px) {
       width: 180px;
-      margin-top: 48px;
-      display: flex;
-      flex-direction: column;
-      color: $yellow;
-      margin-left: auto;
-      font-family: Montserrat;
       font-size: 16px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: normal;
+      svg {
+        width: 180px;
+        height: 63px;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $yellow;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    @media (min-width: 767.98px) {
+      font-size: 16px;
     }
   }
 }
