@@ -1,1 +1,1 @@
-console.log('events page');
+// console.log('events page');

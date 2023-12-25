@@ -1,5 +1,7 @@
 <?php
-
+/*
+* Template Name: archive-project
+*/
 get_header();
 ?>
 <section class="successful-projects">
