@@ -26,7 +26,7 @@ get_header();
             </p>
         </div>
     </section>
-    <section class="section description" id="about">
+    <section class="section description section-nav" id="about">
         <div class="container description__wrapper">
             <div class="description__box">
                 <p class="description__title">
@@ -46,7 +46,7 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="section benefits" id="work-directions">
+    <section class="section benefits section-nav" id="work-directions">
         <div class="container-benefits">
 
             <?php
@@ -134,7 +134,7 @@ $is_end_post_list = $page == $max_pages;
             </div>
         </div>
     </section>
-    <section class="section gallery" id="gallery">
+    <section class="section gallery section-nav" id="gallery">
         <div class="gallery__line line"></div>
         <div class="container">
             <h2 class="gallery__title title">
@@ -148,7 +148,7 @@ $is_end_post_list = $page == $max_pages;
         </div>
     </section>
     
-    <section class="section partners" id="partners">
+    <section class="section partners section-nav" id="partners">
         <div class="partners__line line"></div>
         <div class="container">
             <h2 class="partners__title title">
@@ -183,7 +183,7 @@ $is_end_post_list = $page == $max_pages;
             <?php endif; ?>
         </div>
     </section>
-    <section class="section docs" id="documents">
+    <section class="section docs section-nav" id="documents">
         <div class="docs__line line"></div>
         <div class="container">
             <h2 class="docs__title">
@@ -207,7 +207,7 @@ $is_end_post_list = $page == $max_pages;
             } ?>
         </div>
     </section>
-    <section class="section contacts" id="contacts">
+    <section class="section contacts section-nav" id="contacts">
         <div class="contacts__line line"></div>
         <div class="container">
             <h2 class="contacts__title">

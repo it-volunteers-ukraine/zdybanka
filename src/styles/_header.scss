@@ -48,6 +48,7 @@ html {
     }        
   }  
   &__container {
+    /*height: 115px;*/
     display: flex;
     justify-content: space-between;
     gap: 20px;    
@@ -142,7 +143,10 @@ html {
         a:hover {        
           transition: ease 0.5s;
           border-bottom: 1px solid $yellow; 
-        }       
+        }  
+        a:active {          
+          transition: 1s;
+        }          
       }      
     }
   }
@@ -188,24 +192,29 @@ html {
   }  
 }
 
-//.current-menu-item {color: $yellow;}
-.custom_active{color: $yellow;}
-//.menu-item-object-custom:not(:first-child) {color: $black;}
+.current-menu-item {color: $yellow;}
+.menu-item-object-custom  {color: $black;}
+.custom_active {color: $yellow;}
+
+
 .header--fixed {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;  
-  z-index: 50;
-  background-color:#FFFFFF;
-  transition: ease 0.3s;  
+  @media (min-width: 992px) {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;  
+    z-index: 50;
+    background-color:#FFFFFF;
+    transition: ease 0.3s; 
+  }   
 }
 
 /*Burger=================================*/
 body.lock {
   @media (max-width: 991.98px) {           
-      overflow: hidden; 
-  }
+    overflow: hidden;
+    transition: 0.1s;
+  }    
 } 
 
 .icon-menu {
@@ -282,8 +291,7 @@ body.lock {
     transform: translate(0px, 0%); 
     padding: 16px 16px 0px 24px; 
     @media (min-width: 767.98px) {
-      padding: 32px;
-      
+      padding: 32px;      
     }           
   }             
 }

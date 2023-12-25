@@ -62,8 +62,8 @@
     }    
     &__logo {    
         img {
-            width: 125px;
-            height: 94px;
+            width: 125px;            
+            height: auto;
             display: block;
             margin: 0 auto; 
             @media (min-width: 767.98px) {              
@@ -95,7 +95,8 @@
         }
         @media (min-width: 1280px) {
             font-size: 12px;   
-            width: 200px;                  
+            width: 200px;  
+            margin: 24px 0 32px;                 
         }
     }
     &__social {
@@ -197,7 +198,7 @@
                 margin-bottom: 20px;
             }
         }
-        a {
+        a {            
             color: rgba(255, 255, 255, 0.70);
             font-size: 16px;            
             line-height: 16px;  
@@ -229,7 +230,7 @@
         &:last-of-type {margin-bottom: 0px;}        
        }
        &-wrapper {
-        display: flex;
+        display: flex;        
         gap: 8px;
        }
        &-img {
@@ -241,7 +242,12 @@
             min-width: 80px;
             max-height: 80px;            
         }
-       }       
+       }    
+       &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+       }   
        &-title {
         color: rgba(255, 255, 255, 0.70); 
         font-size: 12px;        
@@ -311,7 +317,7 @@
         padding: 12px 20px;
         background-color: $gray;
         font-size: 25px;
-        @media (min-width: 767.98px) {
+        @media (min-width: 992px) {
             display: none;
         }
     }
