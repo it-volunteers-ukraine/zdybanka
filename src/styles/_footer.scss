@@ -308,20 +308,7 @@
         }
     }
 
-    /*Button to header*/
-    &__btn-header {
-        position: absolute;
-        bottom: 0px;
-        right: 0px;       
-        border-radius: 50%;
-        padding: 12px 20px;
-        background-color: $gray;
-        font-size: 25px;
-        @media (min-width: 992px) {
-            display: none;
-        }
-    }
-    
+        
     /*Copyright============================*/
     &__text {
         color: rgba(255, 255, 255, 0.70);
