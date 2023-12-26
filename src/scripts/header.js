@@ -34,7 +34,7 @@ window.addEventListener('scroll', () => {
   //Fixed header when scrolling   
   if (scrollDistance >= firstSectionHeight) {
     header.classList.add('header--fixed');
-    firstSection.style.marginTop = `${headerHeight}px` + headerHeight;
+    firstSection.style.marginTop = `${headerHeight}px`; //+ headerHeight;
   } else {
     header.classList.remove('header--fixed');
     firstSection.style.marginTop = null;
@@ -52,4 +52,12 @@ window.addEventListener('scroll', () => {
       document.querySelectorAll('.header__list .current-menu-item')[i].querySelector('a').classList.add('custom_active');      
     }
   });
+
+  //Scroll to top
+  const scrollBtn = document.querySelector('.scroll-top')
+  if (scrollDistance > 700) {
+    scrollBtn.classList.add('scroll-top-show');
+  } else {
+    scrollBtn.classList.remove('scroll-top-show');
+  }
 });

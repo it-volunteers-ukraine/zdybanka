@@ -35,6 +35,27 @@ html {
   }
 }
 
+/*Scroll to top========================*/
+.scroll-top {
+  position: fixed;
+  bottom: 70px;
+  right: 5px;       
+  border-radius: 50%;
+  padding: 8px 15px;
+  background-color: $gray;
+  font-size: 25px;
+  z-index: 150;
+  opacity: 0;
+  @media (min-width: 992px) {
+      display: none;
+  }
+  &-show {
+    opacity: 1;
+    transition: 0.5s;
+  }  
+}
+
+/*Header================================*/
 .header {    
   font-family: 'Poppins', sans-serif;  
   position: relative;
@@ -145,7 +166,7 @@ html {
           border-bottom: 1px solid $yellow; 
         }  
         a:active {          
-          transition: 1s;
+          transition: 0.5s;
         }          
       }      
     }
@@ -198,11 +219,13 @@ html {
 
 
 .header--fixed {
+  display: none;
   @media (min-width: 992px) {
+    display: block;
     width: 100%;
     position: fixed;
-    left: 0;
-    top: 0;  
+    left: 0px;
+    top: 0px;  
     z-index: 50;
     background-color:#FFFFFF;
     transition: ease 0.3s; 
@@ -212,8 +235,7 @@ html {
 /*Burger=================================*/
 body.lock {
   @media (max-width: 991.98px) {           
-    overflow: hidden;
-    transition: 0.1s;
+    overflow: hidden;    
   }    
 } 
 
@@ -280,8 +302,8 @@ body.lock {
       align-items: flex-start;              
       width: 100%;
       height: 100%;
-      top: 0;
-      left: 0;
+      top: 0px;
+      left: 0px;
       overflow: auto;
       padding: 0;   
       background-color: rgba(255, 255, 255);
