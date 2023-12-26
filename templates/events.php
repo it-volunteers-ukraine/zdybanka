@@ -48,7 +48,7 @@ $is_end_post_list = $page == $max_pages;
             </div>
             <div class="events-wrapper">
                 <div class="events-service">
-                    <button id='sort-btn1' type='button' class='sort-button' data-sort='desc' >
+                    <button id='sort-btn' type='button' class='sort-button' data-sort='desc' >
                         <svg class="events-sort-icon" alt="sorting">
                             <!-- <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-sort-btn"></use> -->
                             <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/icons.svg#icon-sort-btn-two"></use>
