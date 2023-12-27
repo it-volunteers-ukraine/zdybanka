@@ -14,18 +14,16 @@ if (count($event_photos) <= 1) {
 // print_r($one_photo);
 // print_r($one_photo ? 'one-photo' : '');
 
-$five_and_more_photo = count($event_photos) >= 5 ? True : False;
-?>
-
+$five_and_more_photo = count($event_photos) >= 5 ? True : False; ?>
 <div class="container-gallery">
     <div id='gallery-wrapper' class="gallery-wrapper <?php echo $attr_photo  ?>">
 
         <div class="slider0 swiper">
             <div class="image-slider__wrapper swiper-wrapper">
-                <?php foreach ($event_photos as $img_list) : ?>
+                <?php foreach ($event_photos as $img_list) :?>
                     <div class="image-slider__slide swiper-slide">
-                        <a href="<?php echo $img_list['url'] ?>" class="image-slider-link" data-lightbox="roadtrip0">
-                            <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                        <a href="<?php echo $img_list['url'] ?>" class="image-slider-link" data-lightbox="roadtrip0" as="<?php echo $img_list?>">
+                            <img src="<?php echo $img_list['sizes']['medium_large'] ?>" class='gallery-img' alt="<?php echo $img_list['sizes']['medium_large']; ?>">
                         </a>
                     </div>
                 <?php endforeach ?>
@@ -37,7 +35,7 @@ $five_and_more_photo = count($event_photos) >= 5 ? True : False;
                 <?php foreach ($event_photos as $img_list) : ?>
                     <div class="image-slider__slide swiper-slide">
                         <a href="<?php echo $img_list['url'] ?>" class="image-slider-link" data-lightbox="roadtrip1">
-                            <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                            <img src="<?php echo $img_list['sizes']['medium_large'] ?>" class='gallery-img' alt="<?php echo $img_list['sizes']['medium_large']; ?>">
                         </a>
                     </div>
                 <?php endforeach ?>
@@ -49,7 +47,7 @@ $five_and_more_photo = count($event_photos) >= 5 ? True : False;
                 <?php foreach ($event_photos as $img_list) : ?>
                     <div class="image-slider__slide swiper-slide">
                         <a href="<?php echo $img_list['url'] ?>" class="image-slider-link" data-lightbox="roadtrip2">
-                            <img src="<?php echo $img_list['url'] ?>" class='gallery-img' alt="<?php echo $img_list['url']; ?>">
+                            <img src="<?php echo $img_list['sizes']['medium_large'] ?>" class='gallery-img' alt="<?php echo $img_list['sizes']['medium_large']; ?>">
                         </a>
                     </div>
                 <?php endforeach ?>
@@ -89,6 +87,7 @@ $five_and_more_photo = count($event_photos) >= 5 ? True : False;
         // 'showImageNumberLabel': false,
         'wrapAround': true,
         'disableScrolling': true,
-        'albumLabel': '%1 of %2'
+        'albumLabel': '%1 of %2',
+        'maxWidth': '100%'
     })
 </script>
