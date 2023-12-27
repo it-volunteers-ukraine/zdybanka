@@ -166,20 +166,28 @@
 
 .lb-nav a.lb-prev{
   background: url(../../images/lightbox/prev.png) left 48% no-repeat;
-
+  opacity: .5;
 }
 
 .lb-nav a.lb-next{
   background: url(../../images/lightbox/next.png) right 48% no-repeat;
-
+  opacity: .5;
 }
+
+
 
 .lb-data .lb-close{
   background: url(../../images/lightbox/close.png)  top right no-repeat;
   width: 20px;
   height: 20px;
   background-size: contain;
+  opacity: 0.6;
+}
 
+.lb-nav a, .lb-data .lb-close{
+  &:hover{
+    opacity: 1;
+  }
 }
 
 .lb-dataContainer {
