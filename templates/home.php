@@ -25,7 +25,8 @@ get_header();
             </p>
         </div>
     </section>
-    <section class="section description section-nav" id="about">
+    <section class="section description section-nav">
+        <span id="about"></span>
         <div class="container description__wrapper">
             <div class="description__box">
                 <p class="description__title">
@@ -45,7 +46,8 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="section benefits section-nav" id="work-directions">
+    <section class="section benefits section-nav" >
+        <span id="work-directions"></span>
         <div class="container-benefits">
 
             <?php
