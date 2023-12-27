@@ -5,6 +5,7 @@
 */
 get_header();
 global $post;
+switch_to_locale('uk');
 
 
 $event_title = get_field('event_date', $post);
