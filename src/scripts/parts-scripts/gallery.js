@@ -1,6 +1,5 @@
 // import '../vendors/lightbox';
 // import '../vendors/lightbox-plus-jquery';
-console.log('parts-script/gallery.js');
 
 const galleryWrapperRef = document.querySelector('#gallery-wrapper');
 

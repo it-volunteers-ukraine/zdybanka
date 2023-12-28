@@ -72,23 +72,25 @@ if (sortBtnRef) {
   });
 }
 
-loadMoreBtnRef.addEventListener("click", (e) => {
-  let ajaxObj = eventsQueryParams;
-  let currentPage = Number(listElemHtmlRef.getAttribute("page"));
-  loadMoreBtnRef.setAttribute("disabled", "true");
+if (loadMoreBtnRef) {
+  loadMoreBtnRef.addEventListener("click", (e) => {
+    let ajaxObj = eventsQueryParams;
+    let currentPage = Number(listElemHtmlRef.getAttribute("page"));
+    loadMoreBtnRef.setAttribute("disabled", "true");
 
-  ajaxObj["offset"] = currentPage * postsPerPage;
+    ajaxObj["offset"] = currentPage * postsPerPage;
 
-  sendAjax(ajaxObj, ajaxUrl)
-    .then((response) => {
-      console.log(response);
+    sendAjax(ajaxObj, ajaxUrl)
+      .then((response) => {
+        console.log(response);
 
-      currentPage += 1;
-      listElemHtmlRef.insertAdjacentHTML("beforeend", response.html);
-      listElemHtmlRef.setAttribute("page", currentPage);
-      controlBtnLoadMore(response.max_page, currentPage);
-    })
-    .finally((e) => {
-      loadMoreBtnRef.removeAttribute("disabled");
-    });
-});
+        currentPage += 1;
+        listElemHtmlRef.insertAdjacentHTML("beforeend", response.html);
+        listElemHtmlRef.setAttribute("page", currentPage);
+        controlBtnLoadMore(response.max_page, currentPage);
+      })
+      .finally((e) => {
+        loadMoreBtnRef.removeAttribute("disabled");
+      });
+  });
+}
