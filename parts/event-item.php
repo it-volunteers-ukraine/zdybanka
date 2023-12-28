@@ -12,9 +12,7 @@ switch_to_locale('uk');
             <img src="<?php echo $event_img ?>" alt="<?php echo $event_img_alt ?>">
             <h2 class="events-title"><?php the_field('event_title', $post_id) ?></h2>
             <p class="events-date">
-                <?php 
-                    echo date_i18n("j F Y ", get_field('event_date', $post_id) )
-            ?></p>
+            <?php the_field('event_date'); ?></p>
         </div>
     </a>
 </li>

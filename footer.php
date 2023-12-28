@@ -51,10 +51,21 @@
                         <ul class="footer__event-list">
                             <?php $params = array(
                                 'category_name' => 'event',
-                                'posts_per_page' => 2
+                                'posts_per_page' => 2,
+                                'meta_query' => array(
+                                    array(
+                                        'key' => 'event_date',
+                                        'type' => 'DATE',
+                                    )
+                                ),
+                                'meta_key' => 'event_date',
+                                'orderby' => 'meta_value_num',
+                                'order' => 'DESC', // по убыванию (сначала - свежие посты)
+
                             );
 
                             $my_posts = get_posts($params);
+                            $loop = new WP_Query($params);
                             foreach ($my_posts as $post) :
                                 $event_img = get_field('event_photos', $post)[0]['sizes']['thumbnail'];
                                 $event_img_alt = get_field('event_photos', $post)[0]['alt'];
