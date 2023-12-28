@@ -13,9 +13,8 @@ $event_date = get_field('event_date', $post);
 $event_text = get_field('event_text', $post);
 $event_link_in_calendar = get_field('event_link_in_calendar', $post);
 $event_photos = get_field('event_photos', $post);
-
 $isShowAddCalendar = strtotime((string)$event_date) >= strtotime(date("d.m.Y"));
-// print_r(($event_link_in_calendar));
+$event_date = date_i18n('j F Y', strtotime((string)$event_date));
 ?>
 <section class="section">
     <div class="container">
