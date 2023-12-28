@@ -62,7 +62,7 @@ if (sortBtnRef) {
 
     sendAjax(ajaxObj, ajaxUrl)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         listElemHtmlRef.innerHTML = response.html;
         controlBtnLoadMore(response.posts_coun, 1);
       })
@@ -82,7 +82,7 @@ if (loadMoreBtnRef) {
 
     sendAjax(ajaxObj, ajaxUrl)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
 
         currentPage += 1;
         listElemHtmlRef.insertAdjacentHTML("beforeend", response.html);

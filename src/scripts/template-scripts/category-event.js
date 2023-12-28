@@ -1,6 +1,6 @@
 // import Swiper;
 
-console.log("event page");
+// console.log("event page");
 const btnMoreRef = document.getElementById("btn-more");
 const textContentRef = document.querySelector(".event-content");
 
