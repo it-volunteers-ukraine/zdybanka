@@ -466,11 +466,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 83px;
     margin-top: 24px;
     @media (min-width: 767.98px) {
+      align-items: flex-start;
       flex-direction: row;
       margin-top: 64px;
+      gap: 16px;
     }
   }
   &__item {
@@ -493,12 +495,21 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+
     @media (min-width: 767.98px) {
       margin-top: 16px;
       font-size: 16px;
+      border-bottom: none;
     }
     @media (min-width: 1200px) {
       font-size: 20px;
+    }
+
+    a {
+      border-bottom: 1px solid $black;
+      @media (min-width: 767.98px) {
+        border-bottom: none;
+      }
     }
 
     a:hover {
@@ -508,6 +519,84 @@
     a:active {
       transition: 1s;
       color: $yellow;
+    }
+  }
+
+  &__img {
+    height: 284px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 284px;
+    max-width: 100%;
+
+    @media (min-width: 767.98px) {
+      height: 190px;
+      width: 190px;
+    }
+    @media (min-width: 1200px) {
+      height: 360px;
+      width: 360px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.grid-three {
+  @media (min-width: 767.98px) {
+    flex-wrap: wrap;
+    & > .partners__item {
+      width: calc((100% - (2 * 16px)) / 3);
+    }
+  }
+}
+.grid-four {
+  @media (min-width: 767.98px) {
+    flex-wrap: wrap;
+
+    & .partners__name {
+      font-size: 14px;
+    }
+    & > .partners__item {
+      width: calc((100% - (3 * 16px)) / 4);
+    }
+  }
+
+  & .partners__img {
+    @media (min-width: 767.98px) {
+      height: 155px;
+      width: 155px;
+    }
+    @media (min-width: 1200px) {
+      height: 290px;
+      width: 290px;
+    }
+  }
+}
+.grid-five {
+  @media (min-width: 767.98px) {
+    flex-wrap: wrap;
+
+    & .partners__name {
+      font-size: 12px;
+    }
+    & > .partners__item {
+      width: calc((100% - (4 * 16px)) / 5);
+    }
+  }
+
+  & .partners__img {
+    @media (min-width: 767.98px) {
+      height: 122px;
+      width: 122px;
+    }
+    @media (min-width: 1200px) {
+      height: 212px;
+      width: 212px;
     }
   }
 }

@@ -9,11 +9,9 @@ get_header();
     <section class="section logo">
         <div class="logo__background" style="background-image: url(<?php the_field('logo__img', $current_id); ?>);">
         </div>
-        <!-- <div class="container"> -->
             <p class="logo__title">
                 <?php the_field('logo__title', $current_id); ?>
             </p>
-        <!-- </div> -->
     </section>
     <section class="section info">
         <div class="container info__container">
@@ -71,7 +69,7 @@ get_header();
 
         </div>
     </section>
-<section class="section events">
+    <section class="section events">
         <div class="events__line line"></div>
         <div class="container">
 
@@ -148,7 +146,6 @@ $is_end_post_list = $page == $max_pages;
             <?php get_template_part('parts/gallery', '', $event_photos); ?>
         </div>
     </section>
-    
     <section class="section partners section-nav" id="partners">
         <div class="partners__line line"></div>
         <div class="container">
@@ -194,18 +191,22 @@ $is_end_post_list = $page == $max_pages;
             <?php
             $open_arrow = get_stylesheet_directory() . '/assets/images/open.svg';
             $rows = get_field('docs__links', $current_id);
-            if ($rows) {
-                echo '<ul class="docs__list">';
-                foreach ($rows as $row) {
+            if (!empty($rows)) : ?> 
+            <ul class="docs__list">
+                <?php foreach ($rows as $row):
                     $name = $row['doc__link__name'];
-                    $link = $row['doc__link'];
-                    echo '<li class="docs__item">';
-                    echo '<p class="docs__name">' . $name . file_get_contents($open_arrow) . '</p>';
-                    echo '<div class="docs__doc">' . $link . '</div>';
-                    echo '</li>';
-                }
-                echo '</ul>';
-            } ?>
+                    $file = $row['doc__file'];
+                    if(!empty($file)): ?>
+                    <li class="docs__item">
+                    <p class="docs__name"> <?php echo $name . file_get_contents($open_arrow); ?></p>
+                    <div class="docs__doc">
+                        <iframe data-src="<?php echo $file['url']; ?>" frameborder="0"></iframe>
+                    </div>
+                    </li>
+                <?php endif; ?>
+                <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
         </div>
     </section>
     <section class="section contacts section-nav" id="contacts">
