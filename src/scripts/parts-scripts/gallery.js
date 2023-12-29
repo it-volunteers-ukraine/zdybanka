@@ -1,6 +1,5 @@
 // import '../vendors/lightbox';
 // import '../vendors/lightbox-plus-jquery';
-console.log('parts-script/gallery.js');
 
 const galleryWrapperRef = document.querySelector('#gallery-wrapper');
 
@@ -64,13 +63,13 @@ const swiper2 = new Swiper(".slider2", {
 const adaptiveSlider = (e) => {
   const widtWin = window.innerWidth;
   if (widtWin > 1199 && isFullPhoto) {
-    console.log('full-photo')
+    // console.log('full-photo')
 
-    console.log(swiper2);
+    // console.log(swiper2);
     if (swiper0.params.slidesPerView == 2) {
       return;
     } else {
-      console.log("change params to 2");
+      // console.log("change params to 2");
       swiper0.params.slidesPerView = 2;
       swiper0.slidePrev(0);
       swiper2.params.slidesPerView = 2;
@@ -79,11 +78,11 @@ const adaptiveSlider = (e) => {
     }
     
   }else {
-    console.log('not-full-photo')
+    // console.log('not-full-photo')
     if (swiper0.params.slidesPerView == 1) {
       return;
     } else {
-      console.log("change params to 1");
+      // console.log("change params to 1");
       swiper0.params.slidesPerView = 1;
       swiper0.slideNext(0);
       swiper2.params.slidesPerView = 1;
