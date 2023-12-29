@@ -24,7 +24,7 @@ function closeMenu() {
 
 //Fixed header when scrolling + Active class in menu when scrolling
 const header = document.querySelector('.header');
-const firstSection = document.querySelector('.logo');
+const firstSection = document.querySelector('main').children[0];
 const headerHeight = header.offsetHeight;
 const firstSectionHeight = firstSection.offsetHeight;
 

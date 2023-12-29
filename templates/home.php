@@ -5,7 +5,7 @@ Template Name: home
 get_header();
  $current_id = get_the_ID();
 ?>
-<main>
+<!-- <main> -->
     <section class="section logo">
         <div class="logo__background" style="background-image: url(<?php the_field('logo__img', $current_id); ?>);">
         </div>
@@ -277,7 +277,7 @@ $is_end_post_list = $page == $max_pages;
         </div>
     </section>
     
-</main>
+<!-- </main> -->
 
 
 

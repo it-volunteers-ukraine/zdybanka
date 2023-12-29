@@ -75,6 +75,5 @@
                 </div>
             </div>  
         </header> 
-        
-        
+        <main>     
 	
