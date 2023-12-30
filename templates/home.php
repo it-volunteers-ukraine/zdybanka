@@ -5,7 +5,7 @@ Template Name: home
 get_header();
  $current_id = get_the_ID();
 ?>
-<!-- <main> -->
+
     <section class="section logo">
         <div class="logo__background" style="background-image: url(<?php the_field('logo__img', $current_id); ?>);">
         </div>
@@ -182,6 +182,7 @@ $is_end_post_list = $page == $max_pages;
         </div>
     </section>
     <section class="section docs section-nav" id="documents">
+        
         <div class="docs__line line"></div>
         <div class="container">
             <h2 class="docs__title">
@@ -189,7 +190,7 @@ $is_end_post_list = $page == $max_pages;
             </h2>
 
             <?php
-            $open_arrow = get_stylesheet_directory() . '/assets/images/open.svg';
+            $newWindow = get_stylesheet_directory() . '/assets/images/new-window.svg';
             $rows = get_field('docs__links', $current_id);
             if (!empty($rows)) : ?> 
             <ul class="docs__list">
@@ -197,11 +198,8 @@ $is_end_post_list = $page == $max_pages;
                     $name = $row['doc__link__name'];
                     $file = $row['doc__file'];
                     if(!empty($file)): ?>
-                    <li class="docs__item">
-                    <p class="docs__name"> <?php echo $name . file_get_contents($open_arrow); ?></p>
-                    <div class="docs__doc">
-                        <iframe data-src="<?php echo $file['url']; ?>" frameborder="0"></iframe>
-                    </div>
+                    <li class="docs__item" data-src="<?php echo $file['url']; ?>">
+                    <p class="docs__name"> <?php echo $name . file_get_contents($newWindow); ?></p>
                     </li>
                 <?php endif; ?>
                 <?php endforeach; ?>
@@ -277,7 +275,6 @@ $is_end_post_list = $page == $max_pages;
         </div>
     </section>
     
-<!-- </main> -->
 
 
 
