@@ -239,8 +239,12 @@
     margin-top: 64px;
   }
 
-  @media (min-width: 1200px) {
-    margin-top: 80px;
+  @media (min-width: 992px) {
+    margin-top: 50px;
+    padding-top: 50px;
+  }
+  @media (min-width: 1200px) {    
+    padding-top: 60px;
   }
   &__list {
     display: flex;
