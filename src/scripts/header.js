@@ -34,7 +34,7 @@ window.addEventListener('scroll', () => {
   //Fixed header when scrolling   
   if (scrollDistance >= firstSectionHeight) {
     header.classList.add('header--fixed');
-    firstSection.style.marginTop = `${headerHeight}px`; //+ headerHeight;
+    firstSection.style.marginTop = `${headerHeight}px`;// + headerHeight;
   } else {
     header.classList.remove('header--fixed');
     firstSection.style.marginTop = null;
