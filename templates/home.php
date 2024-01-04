@@ -146,39 +146,55 @@ $is_end_post_list = $page == $max_pages;
             <?php get_template_part('parts/gallery', '', $event_photos); ?>
         </div>
     </section>
-    <section class="section partners section-nav" id="partners">
+    <section class="section partners">
         <div class="partners__line line"></div>
         <div class="container">
             <h2 class="partners__title title">
                 <?php the_field('partners__title', $current_id); ?>
             </h2>
+            <div class="front-page__slider-wrap slider ">
             <?php
             if (have_rows('partners__item', $current_id)): ?>
-                <ul class="partners__list">
+                <div class="slider__inner">
                     <?php while (have_rows('partners__item', $current_id)):
                         the_row(); ?>
-                        <li class="partners__item">
-                            <div class="partners__img">
-                                <img src="<?php the_sub_field('partners__img'); ?>" alt="partners" />
-                            </div>
-                            <div class="partners__name">
-                                <?php
+                        <div class="partners__item slider__item">
+<?php
                                 $link = get_sub_field('partners__name');
                                 if ($link):
                                     $link_url = $link['url'];
                                     $link_title = $link['title'];
                                     $link_target = $link['target'] ? $link['target'] : '_self';
                                     ?>
-                                    <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-                                        <?php echo esc_html($link_title); ?>
-                                    </a>
-                                <?php endif; ?>
+                                <a class="partners__img" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">  
+                                <img src="<?php the_sub_field('partners__img'); ?>" alt="partners" />
+                                </a>
+<?php endif; ?>
 
-                            </div>
-                        </li>
+                                </div>
                     <?php endwhile; ?>
-                </ul>
+                </div>
             <?php endif; ?>
+        </div>
+        <div class="events__btn">
+                <?php
+                $link = get_field('partners__btn', $current_id);
+                if ($link):
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+                    <a class="events__name" href="<?php echo esc_url($link_url); ?>"
+                        target="<?php echo esc_attr($link_target); ?>">
+                        <span class="events__label"><?php echo esc_html($link_title); ?></span>
+                        <?php
+                        $icon_arrow = get_stylesheet_directory() . '/assets/images/arrow_right.svg';
+                        echo file_get_contents($icon_arrow);
+                        ?>
+                    </a>
+                <?php endif;
+                ?>
+            </div>
         </div>
     </section>
     <section class="section docs section-nav" id="documents">

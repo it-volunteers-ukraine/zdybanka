@@ -32,15 +32,22 @@ function wp_it_volunteers_scripts() {
   ];
     wp_enqueue_style( 'home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main') );
     wp_enqueue_script( 'home-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', array(), false, true );
-  wp_enqueue_style( 'events-parts-style', get_template_directory_uri() . '/assets/styles/parts-styles/events.css', array() );
+    wp_enqueue_style( 'events-parts-style', get_template_directory_uri() . '/assets/styles/parts-styles/events.css', array() );
     wp_enqueue_script( 'events-parts-scripts', get_template_directory_uri() . '/assets/scripts/parts-scripts/events.js', array(), false, true );
-  wp_localize_script('events-parts-scripts', 'vars', $front_scripts_args);
-
+    wp_localize_script('events-parts-scripts', 'vars', $front_scripts_args);
+    wp_enqueue_script('home-slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array(), false, true);
+    wp_enqueue_script('home-jquery', 'https://code.jquery.com/jquery-2.2.0.min.js', array(), false, false);
+    wp_enqueue_style('slick-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css', array('main'));
     wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/assets/styles/vendors/swiper.css', array('main') );
     wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() . '/assets/scripts/vendors/swiper-bundle.js', array(), false, true );
     wp_enqueue_style( 'gallery-parts-style', get_template_directory_uri() . '/assets/styles/parts-styles/gallery.css', array() );
     wp_enqueue_script( 'gallery-parts-scripts', get_template_directory_uri() . '/assets/scripts/parts-scripts/gallery.js', array(), false, true );
 
+  }
+
+  if ( is_page_template('templates/partners.php') ) {
+    wp_enqueue_style( 'partners-style', get_template_directory_uri() . '/assets/styles/template-styles/partners.css', array('main') );
+    wp_enqueue_script( 'partners-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/partners.js', array(), false, true );
   }
 
   if ( is_page_template('templates/about.php') ) {
