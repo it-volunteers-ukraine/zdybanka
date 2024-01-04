@@ -44,12 +44,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    @media (min-width: 1200px) {
-      width: 1200px;
-      box-shadow: inset 64px 0 30px -4px #0d0d0d,
-        inset -64px 0 30px -4px #0d0d0d;
-    }
   }
 
   &__img {
@@ -243,7 +237,7 @@
     margin-top: 50px;
     padding-top: 50px;
   }
-  @media (min-width: 1200px) {    
+  @media (min-width: 1200px) {
     padding-top: 60px;
   }
   &__list {
@@ -459,10 +453,12 @@
     font-weight: 900;
     line-height: normal;
     margin-top: 24px;
+    margin-bottom: 24px;
     @media (min-width: 767.98px) {
       margin-top: 80px;
       text-align: end;
       font-size: 48px;
+      margin-bottom: 64px;
     }
   }
   &__list {
@@ -484,14 +480,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    @media (min-width: 767.98px) {
-      width: 200px;
-    }
-    @media (min-width: 1200px) {
-      width: 380px;
-    }
+    width: 100px;
   }
+
   &__name {
     margin-top: 24px;
     text-align: center;
@@ -527,22 +518,11 @@
   }
 
   &__img {
-    height: 284px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 284px;
     max-width: 100%;
     height: auto;
-
-    @media (min-width: 767.98px) {
-      height: 190px;
-      width: 190px;
-    }
-    @media (min-width: 1200px) {
-      height: 360px;
-      width: 360px;
-    }
 
     img {
       max-width: 100%;
@@ -773,5 +753,32 @@
   }
   &__phone-number {
     margin-top: 2px;
+  }
+}
+
+// slider
+
+.slider {
+  overflow: hidden;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.slider .slick-track,
+.slider__inner {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+.slider__item.slick-slide,
+.slider__item img {
+  height: 100px;
+  width: auto;
+
+  @media (max-width: 768px) {
+    height: 50px;
   }
 }
