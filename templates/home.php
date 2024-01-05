@@ -146,7 +146,7 @@ $is_end_post_list = $page == $max_pages;
             <?php get_template_part('parts/gallery', '', $event_photos); ?>
         </div>
     </section>
-    <section class="section partners">
+    <section class="section partners section-nav" id="partners"">
         <div class="partners__line line"></div>
         <div class="container">
             <h2 class="partners__title title">
