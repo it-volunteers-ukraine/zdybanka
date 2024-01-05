@@ -82,9 +82,7 @@ get_header();
                 else :
                     echo 'Нет записей.';
                 endif;
-                ?>
-
-            </ul>
+                ?>            
 
             </ul>
         </div>
@@ -92,8 +90,3 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
-
-
-
-
-
